@@ -104,6 +104,7 @@ namespace RS_Trainer
             this.button4.Size = new System.Drawing.Size(97, 80);
             this.button4.TabIndex = 4;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -114,6 +115,7 @@ namespace RS_Trainer
             this.button5.Size = new System.Drawing.Size(97, 80);
             this.button5.TabIndex = 5;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -124,6 +126,7 @@ namespace RS_Trainer
             this.button6.Size = new System.Drawing.Size(97, 80);
             this.button6.TabIndex = 6;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -134,6 +137,7 @@ namespace RS_Trainer
             this.button7.Size = new System.Drawing.Size(97, 80);
             this.button7.TabIndex = 7;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -144,6 +148,7 @@ namespace RS_Trainer
             this.button8.Size = new System.Drawing.Size(97, 80);
             this.button8.TabIndex = 8;
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -154,6 +159,7 @@ namespace RS_Trainer
             this.button9.Size = new System.Drawing.Size(97, 80);
             this.button9.TabIndex = 9;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -164,6 +170,7 @@ namespace RS_Trainer
             this.button10.Size = new System.Drawing.Size(97, 80);
             this.button10.TabIndex = 10;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -174,6 +181,7 @@ namespace RS_Trainer
             this.button11.Size = new System.Drawing.Size(97, 80);
             this.button11.TabIndex = 11;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -184,6 +192,7 @@ namespace RS_Trainer
             this.button12.Size = new System.Drawing.Size(97, 80);
             this.button12.TabIndex = 12;
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -194,6 +203,7 @@ namespace RS_Trainer
             this.button13.Size = new System.Drawing.Size(97, 80);
             this.button13.TabIndex = 13;
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -204,6 +214,7 @@ namespace RS_Trainer
             this.button14.Size = new System.Drawing.Size(97, 80);
             this.button14.TabIndex = 14;
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
