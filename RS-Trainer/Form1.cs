@@ -24,6 +24,8 @@ namespace RS_Trainer
         List<Label> line2;
         Font myFont;
 
+        State currentState;
+
         void nextInputPassword(Char nxt)
         {
             /*
@@ -108,17 +110,32 @@ namespace RS_Trainer
             LoadMenu();
         }
 
-        public void LoadMenu()
+        async public Task<int> LoadMenu()
         {
-
+            //Timer timer = new System.Timers.Timer(1000);
+            SetText("Диагностика", "устройства", 1, 1);
+            await Task.Delay(1000);
+            SetText("Устройство", "исправно", 1, 2);
+            await Task.Delay(1000);
+            SetText("Пульт", "записи", 4, 3);
+            await Task.Delay(1000);
+            SetText("Выберите", "режим", 2, 3);
+            await Task.Delay(1000);
+            return 0;
         }
 
         public Form1()
         {
             myFont = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            
             InitializeLines();
             InitializeComponent();
-            LoadPhone();
+
+            //LoadMenu();
+            currentState = new MenuState(this);
+
+
+
             /*
             variants = new List<List<String>>();
             variants.Add(new List<String>());
@@ -142,18 +159,15 @@ namespace RS_Trainer
 
         private void button3_Click(object sender, EventArgs e)
         {
-            /*
-            if (currentStage == 0)
-            {
-                currentVariant += 1;
-                currentVariant %= variants[0].Count;
-                setTextStage1();
-            }
-            */
+            currentState.RightDown();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
+            SetText("Доступ", "закрыт", 3, 3);
+            SetText("Доступ", "закрыт", 3, 3);
+
+
             /*
             if (currentStage == 0)
             {
@@ -251,6 +265,7 @@ namespace RS_Trainer
 
         private void button11_Click(object sender, EventArgs e)
         {
+
             if (currentStage == 1)
             {
                 nextInputPassword('8');
@@ -281,6 +296,11 @@ namespace RS_Trainer
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            currentState.LeftUp();
         }
     }
 }
