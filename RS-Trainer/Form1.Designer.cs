@@ -48,6 +48,7 @@ namespace RS_Trainer
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -227,6 +228,17 @@ namespace RS_Trainer
             this.button15.TabIndex = 15;
             this.button15.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("SimSun-ExtB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(80, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 19);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Что то на русском";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -235,6 +247,7 @@ namespace RS_Trainer
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(321, 565);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
@@ -257,6 +270,7 @@ namespace RS_Trainer
             this.TransparencyKey = System.Drawing.Color.LimeGreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -276,6 +290,7 @@ namespace RS_Trainer
         private Button button13;
         private Button button14;
         private Button button15;
+        private Label label1;
     }
 }
 

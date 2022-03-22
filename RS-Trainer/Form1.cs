@@ -22,9 +22,11 @@ namespace RS_Trainer
 
         List<Label> line1;
         List<Label> line2;
+        Font myFont;
 
         void nextInputPassword(Char nxt)
         {
+            /*
             String line1 = textBox1.Lines[0];
             StringBuilder txt = new StringBuilder(textBox1.Lines[1]);
             if (inputPtr < txt.Length)
@@ -34,6 +36,7 @@ namespace RS_Trainer
                 inputPtr += 2;
             }
             textBox1.Lines = new string[] { line1, txt.ToString() };
+            */
         }
 
         public void InitializeLines()
@@ -48,28 +51,74 @@ namespace RS_Trainer
 
                 line1[i].Location = new System.Drawing.Point(76 + i * 14, 151);
                 line1[i].Name = "line1[" + i + "]";
-                line1[i].Size = new System.Drawing.Size(13, 23);
-                line1[i].BackColor = Color.Silver;
-                line1[i].BorderStyle = BorderStyle.FixedSingle;
+                line1[i].Size = new System.Drawing.Size(13, 27);
+                line1[i].BackColor = Color.FromArgb(80, 83, 83, 91);
+                line1[i].TextAlign = ContentAlignment.BottomCenter;
+                line1[i].Font = myFont;
 
                 this.Controls.Add(line1[i]);
 
                 line2[i].Location = new System.Drawing.Point(76 + i * 14, 180);
                 line2[i].Name = "line2[" + i + "]";
-                line2[i].Size = new System.Drawing.Size(13, 23);
-                line2[i].BackColor = Color.Silver;
-                line2[i].BorderStyle = BorderStyle.FixedSingle;
+                line2[i].Size = new System.Drawing.Size(13, 27);
+                line2[i].BackColor = Color.FromArgb(80, 83, 83, 91);
+                line2[i].TextAlign = ContentAlignment.BottomCenter;
+                line2[i].Font = myFont;
 
                 this.Controls.Add(line2[i]);
             }
         }
 
+        public void SetTextLine1(String text, int offset = 0)
+        {
+            if (offset < 0) offset = 0;
+            for(int i = 0; i < 12; ++i)
+            {
+                if (offset > i || i - offset >= text.Length) line1[i].Text = "";
+                else line1[i].Text = text.Substring(i - offset, 1);
+            }
+        }
 
+        public void SetTextLine2(String text, int offset = 0)
+        {
+            if (offset < 0) offset = 0;
+            for (int i = 0; i < 12; ++i)
+            {
+                if (offset > i || i - offset >= text.Length) line2[i].Text = "";
+                else line2[i].Text = text.Substring(i - offset, 1);
+            }
+        }
+
+        public void SetText(String line1, String line2, int offset1 = 0, int offset2 = 0)
+        {
+            SetTextLine1(line1, offset1);
+            SetTextLine2(line2, offset2);
+        }
+
+        public void LoadPhone()
+        {
+            SetText("Диагностика", "устройства", 1, 1);
+            Thread.Sleep(1000);
+            SetText("Устройство", "исправно", 1, 2);
+            Thread.Sleep(1000);
+            SetText("Пульт", "записи", 4, 3);
+            Thread.Sleep(1000);
+            SetText("Выберите", "режим", 2, 3);
+            Thread.Sleep(1000);
+            LoadMenu();
+        }
+
+        public void LoadMenu()
+        {
+
+        }
 
         public Form1()
         {
+            myFont = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             InitializeLines();
             InitializeComponent();
+            LoadPhone();
             /*
             variants = new List<List<String>>();
             variants.Add(new List<String>());
@@ -225,6 +274,11 @@ namespace RS_Trainer
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
