@@ -72,6 +72,7 @@ namespace RS_Trainer
             this.button2.Size = new System.Drawing.Size(64, 44);
             this.button2.TabIndex = 2;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -227,6 +228,7 @@ namespace RS_Trainer
             this.button15.Size = new System.Drawing.Size(60, 38);
             this.button15.TabIndex = 15;
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // Form1
             // 

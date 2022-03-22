@@ -18,28 +18,15 @@ namespace RS_Trainer
         List<List<String>> variants;
 
         int inputPtr = 0;
-        String currentPassword;
+        public String currentPassword = "00000000";
 
-        List<Label> line1;
-        List<Label> line2;
-        Font myFont;
+        public List<Label> line1;
+        public List<Label> line2;
+        public Font myFont;
+        public Font myFontUL;
 
-        State currentState;
 
-        void nextInputPassword(Char nxt)
-        {
-            /*
-            String line1 = textBox1.Lines[0];
-            StringBuilder txt = new StringBuilder(textBox1.Lines[1]);
-            if (inputPtr < txt.Length)
-            {
-                currentPassword += nxt;
-                txt[inputPtr] = '*';
-                inputPtr += 2;
-            }
-            textBox1.Lines = new string[] { line1, txt.ToString() };
-            */
-        }
+        public State currentState;
 
         public void InitializeLines()
         {
@@ -110,7 +97,7 @@ namespace RS_Trainer
             LoadMenu();
         }
 
-        async public Task<int> LoadMenu()
+        async public void LoadMenu()
         {
             //Timer timer = new System.Timers.Timer(1000);
             SetText("Диагностика", "устройства", 1, 1);
@@ -121,30 +108,18 @@ namespace RS_Trainer
             await Task.Delay(1000);
             SetText("Выберите", "режим", 2, 3);
             await Task.Delay(1000);
-            return 0;
+            currentState = new MenuState(this);
         }
 
         public Form1()
         {
             myFont = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            
+            myFontUL = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             InitializeLines();
             InitializeComponent();
 
-            //LoadMenu();
-            currentState = new MenuState(this);
-
-
-
-            /*
-            variants = new List<List<String>>();
-            variants.Add(new List<String>());
-            variants[0].Add("Работа");
-            variants[0].Add("Настройки");
-            variants[0].Add("Тест");
-            variants.Add(new List<String>());
-            setTextStage1();
-            */
+            currentState = new State(this);
+            LoadMenu();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -164,128 +139,58 @@ namespace RS_Trainer
 
         private void button13_Click(object sender, EventArgs e)
         {
-            SetText("Доступ", "закрыт", 3, 3);
-            SetText("Доступ", "закрыт", 3, 3);
-
-
-            /*
-            if (currentStage == 0)
-            {
-                setText("Доступ закрыт");
-                Thread.Sleep(1000);
-                setText("Введите пароль");
-                Thread.Sleep(1000);
-                String[] lines = new string[2];
-                lines[0] = "Пароль";
-                lines[1] = "_ _ _ _ _ _ _ _";
-                textBox1.Clear();
-                textBox1.Lines = lines;
-
-                currentStage += 1;
-            }
-            if (currentStage == 1)
-            {
-                if (currentPassword == "11111111")
-                {
-                    currentStage += 1;
-                    variants.Add(new List<String>());
-                    variants[currentStage].Add("Выдача");
-                    variants[currentStage].Add("Изменить");
-                    setTextStage1();
-                }
-                else
-                {
-                    inputPtr = 0;
-                    currentPassword = "";
-                    String[] lines = new string[2];
-                    lines[0] = "Пароль";
-                    lines[1] = "_ _ _ _ _ _ _ _";
-                    textBox1.Clear();
-                    textBox1.Lines = lines;
-                }
-            }
-            */
+            currentState.Yes();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('1');
-            }
+            currentState.Digit(1);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('2');
-            }
+            currentState.Digit(2);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('3');
-            }
+            currentState.Digit(3);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('4');
-            }
+            currentState.Digit(4);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('5');
-            }
+            currentState.Digit(5);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('6');
-            }
+            currentState.Digit(6);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('7');
-            }
+            currentState.Digit(7);
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
 
-            if (currentStage == 1)
-            {
-                nextInputPassword('8');
-            }
+            currentState.Digit(8);
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('9');
-            }
+            currentState.Digit(9);
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (currentStage == 1)
-            {
-                nextInputPassword('0');
-            }
+            currentState.Digit(0);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -301,6 +206,16 @@ namespace RS_Trainer
         private void button1_Click(object sender, EventArgs e)
         {
             currentState.LeftUp();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            currentState.F();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            currentState.No();
         }
     }
 }
