@@ -12,8 +12,6 @@ namespace RS_Trainer
         int currentDigit;
         async public void Load()
         {
-            form.SetText("Идёт", "проверка", 4, 2);
-            await Task.Delay(1000);
             form.SetText("Выберите", "тип Р-168:", 2, 2);
             await Task.Delay(1000);
             form.SetText("тип Р-168:", "01", 2, 5);
@@ -29,7 +27,7 @@ namespace RS_Trainer
         public SelectRSTypeState(Form1 form) : base(form)
         {
             ready = false;
-            currentDigit = 0;
+            currentDigit = 1;
             Load();
         }
 
@@ -59,10 +57,21 @@ namespace RS_Trainer
             form.line2[6].Font = form.myFontUL;
         }
 
+        public override void Yes()
+        {
+            base.Yes();
+            form.currentState = new RS05MenuState(form, form.line2[5].Text + form.line2[6].Text);
+            form.line2[currentDigit + 5].Font = form.myFont;
+        }
+
         public override void No()
         {
             base.No();
-            if(ready) form.currentState = new MenuState(form);
+            if (ready)
+            {
+                form.currentState = new MenuState(form);
+                form.line2[currentDigit + 5].Font = form.myFont;
+            } 
         }
     }
 }

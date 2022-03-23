@@ -24,7 +24,7 @@ namespace RS_Trainer
         public List<Label> line2;
         public Font myFont;
         public Font myFontUL;
-
+        public String rs05adress;
 
         public State currentState;
 
@@ -111,12 +111,17 @@ namespace RS_Trainer
             currentState = new MenuState(this);
         }
 
+        public void InitializeRadioData()
+        {
+            rs05adress = "000";
+        }
         public Form1()
         {
             myFont = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             myFontUL = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             InitializeLines();
             InitializeComponent();
+            InitializeRadioData();
 
             currentState = new State(this);
             LoadMenu();
