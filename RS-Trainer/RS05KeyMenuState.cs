@@ -6,9 +6,27 @@ using System.Threading.Tasks;
 
 namespace RS_Trainer
 {
-    class RS05KeyMenuState : State
+    class RS05KeyMenuState : MenuState
     {
+        readonly int numberOfKeys = 3;
+
+        protected new void Load()
+        {
+            variants = new List<string>(numberOfKeys);
+            for(int i = 1; i <= numberOfKeys; i++)
+            {
+                variants.Add("Ключ " + i);
+            }
+
+            base.Load();
+        }
+
         public RS05KeyMenuState(Form1 form) : base(form)
+        {
+            
+        }
+
+        public override void Yes()
         {
             
         }

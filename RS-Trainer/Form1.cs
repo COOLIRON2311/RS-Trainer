@@ -108,7 +108,7 @@ namespace RS_Trainer
             await Task.Delay(1000);
             SetText("Выберите", "режим", 2, 3);
             await Task.Delay(1000);
-            currentState = new MenuState(this);
+            currentState = new RCMenuState(this);
         }
 
         public void InitializeRadioData()

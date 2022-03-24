@@ -8,8 +8,10 @@ namespace RS_Trainer
 {
     class RS05MenuState : MenuState
     {
-        async public void Load()
+        bool ready;
+        async public new void Load()
         {
+            ready = false;
             form.SetText("Выберите", "действие:", 2, 2);
             await Task.Delay(1000);
 
@@ -17,47 +19,53 @@ namespace RS_Trainer
             variants.Add("Выдача РД");
             variants.Add("Измен  РД");
             variants.Add("Стир   РД");
-            
-            currentVariant = 0;
-            form.SetText(variants[currentVariant], variants[(currentVariant + 1) % variants.Count], 2, 2);
-            SetArrows();
+
+            base.Load();
+            ready = true;
         }
         public RS05MenuState(Form1 form, String type) :base(form)
         {
-            if(type != "05")
+            switch (type)
             {
-                form.currentState = new SelectRSTypeState(form);
-            }
-            else
-            {
-                Load();
+                case "05":
+                    Load();
+                    break;
+                default:
+                    form.currentState = new SelectRSTypeState(form);
+                    break;
             }
         }
 
         public override void Yes()
         {
-            switch (currentVariant)
+            if (ready)
             {
-                case 0:
-                    //Выдача
-                    //form.currentState = new RS05SendRDState(form);
-                    break;
-                case 1:
-                    //Изменение
-                    form.currentState = new RS05ChangeRDMenuState(form);
-                    break;
-                case 2:
-                    //Стирание
-                    //form.currentState = new RS05ClearRDState(form);
-                    break;
-                default:
-                    break;
+                switch (currentVariant)
+                {
+                    case 0:
+                        //Выдача
+                        //form.currentState = new RS05SendRDState(form);
+                        break;
+                    case 1:
+                        //Изменение
+                        form.currentState = new RS05ChangeRDMenuState(form);
+                        break;
+                    case 2:
+                        //Стирание
+                        //form.currentState = new RS05ClearRDState(form);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
         public override void No()
         {
-            form.currentState = new SelectRSTypeState(form);
+            if(ready)
+            {
+                form.currentState = new SelectRSTypeState(form);
+            }
         }
     }
 }

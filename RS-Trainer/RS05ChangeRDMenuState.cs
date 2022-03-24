@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace RS_Trainer
 {
-    class RS05ChangeRDMenuState : MenuState
+    class RS05ChangeRDMenuState : RCMenuState
     {
-        async public void Load()
+        async public new void Load()
         {
             form.SetText("Выберите", "действие:", 2, 2);
             await Task.Delay(1000);

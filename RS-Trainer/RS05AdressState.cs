@@ -8,20 +8,17 @@ namespace RS_Trainer
 {
     class RS05AdressState : State
     {
-        bool ready;
         int currentDigit;
-        async public void Load()
+        async public new void Load()
         {
             form.SetText("Адр ключа", form.rs05adress, 2, 4);
             form.line2[4].Font = form.myFontUL;
-            ready = true;
         }
     
         public RS05AdressState(Form1 form) : base(form)
         {
             Load();
             currentDigit = 0;
-            ready = true;
         }
 
         public void SetType(int n)
@@ -29,11 +26,10 @@ namespace RS_Trainer
             form.line2[currentDigit + 4].Text = n.ToString();
         }
 
-
         public override void Digit(int n)
         {
             base.Digit(n);
-            if (ready && n > -1 && n < 10)
+            if (n > -1 && n < 10)
             {
                 SetType(n);
             }
@@ -70,11 +66,9 @@ namespace RS_Trainer
         public override void No()
         {
             base.No();
-            if (ready)
-            {
-                form.currentState = new RS05ChangeRDMenuState(form);
-                form.line2[currentDigit + 4].Font = form.myFont;
-            }
+            form.currentState = new RS05ChangeRDMenuState(form);
+            form.line2[currentDigit + 4].Font = form.myFont;
+            
         }
     }
 }

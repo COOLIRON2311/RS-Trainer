@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj": {}
+    "C:\\Users\\Anoth\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj": {
+    "C:\\Users\\Anoth\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
+        "projectUniqueName": "C:\\Users\\Anoth\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
         "projectName": "RS-Trainer",
-        "projectPath": "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
+        "projectPath": "C:\\Users\\Anoth\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
         "packagesPath": "C:\\Users\\Anoth\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\obj\\",
+        "outputPath": "C:\\Users\\Anoth\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Anoth\\AppData\\Roaming\\NuGet\\NuGet.Config",

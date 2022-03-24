@@ -69,7 +69,7 @@ namespace RS_Trainer
             base.No();
             if (ready)
             {
-                form.currentState = new MenuState(form);
+                form.currentState = new RCMenuState(form);
                 form.line2[currentDigit + 5].Font = form.myFont;
             } 
         }

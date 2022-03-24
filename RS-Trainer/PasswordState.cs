@@ -24,7 +24,7 @@ namespace RS_Trainer
             ready = true;
         }
 
-        public void SetPassword(int n, int currentDigit)
+        private void SetPassword(int n, int currentDigit)
         {
             form.line2[currentDigit + 2].Text = "*";
             password.Append(n);
@@ -60,7 +60,16 @@ namespace RS_Trainer
                 {
                     form.SetText("Идёт", "проверка", 4, 2);
                     await Task.Delay(1000);
-                    form.currentState = new SelectRSTypeState(form);
+                    switch (type)
+                    {
+                        case "work":
+                            form.currentState = new SelectRSTypeState(form);
+                            break;
+                        case "copyRD":
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else
                 {
@@ -77,7 +86,7 @@ namespace RS_Trainer
             base.No();
             if(ready)
             {
-                form.currentState = new MenuState(form);
+                form.currentState = new RCMenuState(form);
                 form.line2[numberOfDigits + 2].Font = form.myFont;
             }
         }
