@@ -17,6 +17,8 @@ namespace RS_Trainer
         int currentVariant = 0;
         List<List<String>> variants;
 
+        public List<List<String>> keyGroups;
+
         int inputPtr = 0;
         public String currentPassword = "00000000";
 
@@ -108,12 +110,22 @@ namespace RS_Trainer
             await Task.Delay(1000);
             SetText("Выберите", "режим", 2, 3);
             await Task.Delay(1000);
-            currentState = new RCMenuState(this);
+            currentState = new RS05KeyMenuState(this);
         }
 
         public void InitializeRadioData()
         {
             rs05adress = "000";
+
+            keyGroups = new List<List<String>>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                keyGroups.Add(new List<String>());
+
+                for (int j = 0; j < 8; j++)
+                    keyGroups[i].Add("000000");
+            }
         }
         public Form1()
         {

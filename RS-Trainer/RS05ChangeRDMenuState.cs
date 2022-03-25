@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RS_Trainer
 {
-    class RS05ChangeRDMenuState : RCMenuState
+    class RS05GroupMenuState : RCMenuState
     {
         async public new void Load()
         {
@@ -21,7 +21,7 @@ namespace RS_Trainer
             form.SetText(variants[currentVariant], variants[(currentVariant + 1) % variants.Count], 2, 2);
             SetArrows();
         }
-        public RS05ChangeRDMenuState(Form1 form) : base(form)
+        public RS05GroupMenuState(Form1 form) : base(form)
         {
             Load();
         }
@@ -32,11 +32,11 @@ namespace RS_Trainer
             {
                 case 0:
                     //Ключ
-                    //form.currentState = new RS05KeyMenuState(form);
+                    form.currentState = new RS05KeyMenuState(form);
                     break;
                 case 1:
                     //Адрес
-                    form.currentState = new RS05AdressState(form);
+                    form.currentState = new RS05AdressState(form,3,4);
                     break;
                 default:
                     break;

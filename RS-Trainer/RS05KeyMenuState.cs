@@ -23,12 +23,12 @@ namespace RS_Trainer
 
         public RS05KeyMenuState(Form1 form) : base(form)
         {
-            
+            Load();
         }
 
         public override void Yes()
         {
-            
+            form.currentState = new RSO5GroupMenuState(form,base.currentVariant);
         }
     }
 }

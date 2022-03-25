@@ -6,25 +6,35 @@ using System.Threading.Tasks;
 
 namespace RS_Trainer
 {
-    class RS05AdressState : InputState
+    class RS05GroupInputState : InputState
     {
         int currentDigit;
+        int group;
+        int key;
         async public new void Load()
         {
-            form.SetText("Адр ключа", form.rs05adress, 2, base.offset);
-            form.line2[4].Font = form.myFontUL;
+            form.SetText("Группа "+group, form.keyGroups[key][group], 2, base.offset);
+            form.line2[base.offset].Font = form.myFontUL;
         }
-    
-        public RS05AdressState(Form1 form,int cell, int offset) : base(form,cell,offset)
+
+        public RS05GroupInputState(Form1 form,int cell, int offset, int keyNum,int groupNum) : base(form, cell, offset)
         {
+            group = groupNum;
+            key = keyNum;
             Load();
             currentDigit = 0;
+        }
+
+        public override void Digit(int n)
+        {
+            base.Digit(n);
+            base.RightDown();
         }
 
         public override void Yes()
         {
             base.Yes();
-            form.rs05adress = base.GetInputText();
+            form.keyGroups[key][group] = base.GetInputText();
             form.currentState = new RS05GroupMenuState(form);
         }
 
@@ -32,7 +42,6 @@ namespace RS_Trainer
         {
             base.No();
             form.currentState = new RS05GroupMenuState(form);
-           
         }
     }
 }
