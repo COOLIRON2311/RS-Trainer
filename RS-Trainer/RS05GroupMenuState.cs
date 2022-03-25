@@ -36,5 +36,10 @@ namespace RS_Trainer
             else
                 form.currentState = new RS05GroupInputState(form,6,3, key, base.currentVariant);
         }
+
+        public override void No()
+        {
+            form.currentState = new RS05KeyMenuState(form);
+        }
     }
 }

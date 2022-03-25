@@ -51,8 +51,7 @@ namespace RS_Trainer
                         form.currentState = new RS05ChangeRDMenuState(form);
                         break;
                     case 2:
-                        //Стирание
-                        //form.currentState = new RS05ClearRDState(form);
+                        form.currentState = new RS05ClearData(form);
                         break;
                     default:
                         break;

@@ -30,5 +30,10 @@ namespace RS_Trainer
         {
             form.currentState = new RS05GroupMenuState(form,base.currentVariant);
         }
+
+        public override void No()
+        {
+            form.currentState = new RS05ChangeRDMenuState(form);
+        }
     }
 }
