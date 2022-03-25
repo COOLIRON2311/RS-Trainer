@@ -28,7 +28,7 @@ namespace RS_Trainer
 
         public override void Yes()
         {
-            form.currentState = new RSO5GroupMenuState(form,base.currentVariant);
+            form.currentState = new RS05GroupMenuState(form,base.currentVariant);
         }
     }
 }

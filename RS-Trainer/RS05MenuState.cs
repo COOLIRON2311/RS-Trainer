@@ -48,7 +48,7 @@ namespace RS_Trainer
                         break;
                     case 1:
                         //Изменение
-                        form.currentState = new RS05GroupMenuState(form);
+                        form.currentState = new RS05ChangeRDMenuState(form);
                         break;
                     case 2:
                         //Стирание

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RS_Trainer
 {
-    class RS05GroupMenuState : RCMenuState
+    class RS05ChangeRDMenuState : MenuState
     {
         async public new void Load()
         {
@@ -21,7 +21,7 @@ namespace RS_Trainer
             form.SetText(variants[currentVariant], variants[(currentVariant + 1) % variants.Count], 2, 2);
             SetArrows();
         }
-        public RS05GroupMenuState(Form1 form) : base(form)
+        public RS05ChangeRDMenuState(Form1 form) : base(form)
         {
             Load();
         }

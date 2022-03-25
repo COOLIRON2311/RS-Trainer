@@ -35,13 +35,13 @@ namespace RS_Trainer
         {
             base.Yes();
             form.keyGroups[key][group] = base.GetInputText();
-            form.currentState = new RS05GroupMenuState(form);
+            form.currentState = new RS05GroupMenuState(form,key);
         }
 
         public override void No()
         {
             base.No();
-            form.currentState = new RS05GroupMenuState(form);
+            form.currentState = new RS05GroupMenuState(form,key);
         }
     }
 }

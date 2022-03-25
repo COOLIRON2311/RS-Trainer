@@ -25,13 +25,13 @@ namespace RS_Trainer
         {
             base.Yes();
             form.rs05adress = base.GetInputText();
-            form.currentState = new RS05GroupMenuState(form);
+            form.currentState = new RS05ChangeRDMenuState(form);
         }
 
         public override void No()
         {
             base.No();
-            form.currentState = new RS05GroupMenuState(form);
+            form.currentState = new RS05ChangeRDMenuState(form);
            
         }
     }

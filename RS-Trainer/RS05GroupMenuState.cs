@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace RS_Trainer
 {
-    class RSO5GroupMenuState : MenuState
+    class RS05GroupMenuState : MenuState
     {
-        readonly int numberOfKeys = 7;
+        readonly int numberofGroups = 7;
         int key;
         protected new void Load()
         {
-            variants = new List<string>(numberOfKeys);
-            for (int i = 0; i <= numberOfKeys; i++)
+            variants = new List<string>(numberofGroups);
+            for (int i = 0; i <= numberofGroups; i++)
             {
                 variants.Add("Группа " + i);
             }
@@ -23,7 +23,7 @@ namespace RS_Trainer
             base.Load();
         }
 
-        public RSO5GroupMenuState(Form1 form, int keyNum) : base(form)
+        public RS05GroupMenuState(Form1 form, int keyNum) : base(form)
         {
             key = keyNum;
             Load();
@@ -31,7 +31,10 @@ namespace RS_Trainer
 
         public override void Yes()
         {
-            form.currentState = new RS05GroupInputState(form,6,3, key, base.currentVariant);
+            if (base.currentVariant == 8)
+                form.currentState = new RS05ControlSum(form, key);
+            else
+                form.currentState = new RS05GroupInputState(form,6,3, key, base.currentVariant);
         }
     }
 }
