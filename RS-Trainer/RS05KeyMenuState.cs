@@ -10,7 +10,7 @@ namespace RS_Trainer
     {
         readonly int numberOfKeys = 3;
 
-        protected new void Load()
+        protected override void Load()
         {
             variants = new List<string>(numberOfKeys);
             for(int i = 1; i <= numberOfKeys; i++)
@@ -28,7 +28,7 @@ namespace RS_Trainer
 
         public override void Yes()
         {
-            form.currentState = new RS05GroupMenuState(form,base.currentVariant);
+            form.currentState = new RS05GroupMenuState(form, base.currentVariant);
         }
 
         public override void No()

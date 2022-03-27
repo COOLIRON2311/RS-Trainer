@@ -8,23 +8,23 @@ namespace RS_Trainer
 {
     class RS05AdressState : InputState
     {
-        int currentDigit;
-        async public new void Load()
+        protected override void Load()
         {
-            form.SetText("Адр ключа", form.rs05adress, 2, base.offset);
+            form.SetText("Адр ключа", form._rs05address, 2, base.offset);
             form.line2[4].Font = form.myFontUL;
+            base.Load();
         }
     
         public RS05AdressState(Form1 form,int cell, int offset) : base(form,cell,offset)
         {
-            Load();
             currentDigit = 0;
+            Load();
         }
 
         public override void Yes()
         {
             base.Yes();
-            form.rs05adress = base.GetInputText();
+            form._rs05address = base.GetInputText();
             form.currentState = new RS05ChangeRDMenuState(form);
         }
 

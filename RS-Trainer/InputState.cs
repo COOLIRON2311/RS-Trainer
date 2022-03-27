@@ -8,7 +8,7 @@ namespace RS_Trainer
 {
     class InputState : State
     {
-        int currentDigit;
+        public int currentDigit;
         protected int cellNum;
         protected int offset;
 

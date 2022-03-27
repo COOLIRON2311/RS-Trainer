@@ -14,8 +14,9 @@ namespace RS_Trainer
         public void Load()
         {
             Random r = new Random();
-            form.SetTextLine1("Контрольная",1);
-            form.SetTextLine2("сумма:" + ((r.Next() + 100) % 1000),2);
+            form.SetTextLine1("Контрольная", 1);
+            form.SetTextLine2("сумма:" + ((r.Next() + 100) % 1000), 2);
+            base.Load();
         }
 
         public RS05ControlSum(Form1 form, int keyNum) : base(form)

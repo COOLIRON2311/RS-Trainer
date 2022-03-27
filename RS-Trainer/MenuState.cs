@@ -17,10 +17,11 @@ namespace RS_Trainer
             form.line1[11].Text = "◂";
         }
 
-        protected void Load()
+        protected override void Load()
         {
             currentVariant = 0;
             UpdateText();
+            base.Load();
         }
 
         protected void UpdateText()

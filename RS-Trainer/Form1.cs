@@ -13,20 +13,19 @@ namespace RS_Trainer
 {
     public partial class Form1 : Form
     {
-        int currentStage = 0;
-        int currentVariant = 0;
-        List<List<String>> variants;
-
         public List<List<String>> keyGroups;
+        public List<List<String>> _keyGroups;
 
-        int inputPtr = 0;
+
+        public String rs05address;
+        public String _rs05address;
+
         public String currentPassword = "00000000";
 
         public List<Label> line1;
         public List<Label> line2;
         public Font myFont;
         public Font myFontUL;
-        public String rs05adress;
 
         public State currentState;
 
@@ -115,16 +114,22 @@ namespace RS_Trainer
 
         public void InitializeRadioData()
         {
-            rs05adress = "000";
+            rs05address = "001"; //001
+            _rs05address = "001";
 
             keyGroups = new List<List<String>>();
+            _keyGroups = new List<List<String>>();
 
             for (int i = 0; i < 3; i++)
             {
                 keyGroups.Add(new List<String>());
+                _keyGroups.Add(new List<String>());
 
                 for (int j = 0; j < 8; j++)
-                    keyGroups[i].Add("000000");
+                {
+                    keyGroups[i].Add("------"); //000000  ------
+                    _keyGroups[i].Add("------");
+                }
             }
         }
         public Form1()
@@ -134,6 +139,7 @@ namespace RS_Trainer
             InitializeLines();
             InitializeComponent();
             InitializeRadioData();
+            //LoadRadioDataFromFile("rd.txt");
 
             currentState = new State(this);
             LoadMenu();
@@ -151,63 +157,123 @@ namespace RS_Trainer
 
         private void button3_Click(object sender, EventArgs e)
         {
-            currentState.RightDown();
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.RightDown();
+                currentState.ready = true;
+            }
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            currentState.Yes();
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Yes();
+                currentState.ready = true;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            currentState.Digit(1);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(1);
+                currentState.ready = true;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            currentState.Digit(2);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(2);
+                currentState.ready = true;
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            currentState.Digit(3);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(3);
+                currentState.ready = true;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            currentState.Digit(4);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(4);
+                currentState.ready = true;
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            currentState.Digit(5);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(5);
+                currentState.ready = true;
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            currentState.Digit(6);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(6);
+                currentState.ready = true;
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            currentState.Digit(7);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(7);
+                currentState.ready = true;
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
 
-            currentState.Digit(8);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(8);
+                currentState.ready = true;
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            currentState.Digit(9);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(9);
+                currentState.ready = true;
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            currentState.Digit(0);
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.Digit(0);
+                currentState.ready = true;
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -222,17 +288,32 @@ namespace RS_Trainer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            currentState.LeftUp();
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.LeftUp();
+                currentState.ready = true;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            currentState.F();
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.F();
+                currentState.ready = true;
+            }
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            currentState.No();
+            if (currentState.ready && currentState.loaded)
+            {
+                currentState.ready = false;
+                currentState.No();
+                currentState.ready = true;
+            }
         }
     }
 }

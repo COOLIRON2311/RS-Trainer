@@ -8,15 +8,16 @@ namespace RS_Trainer
 {
     class SelectRSTypeState : State
     {
-        bool ready;
         int currentDigit;
-        async public void Load()
+        async protected override void Load()
         {
             form.SetText("Выберите", "тип Р-168:", 2, 2);
             await Task.Delay(1000);
+
             form.SetText("тип Р-168:", "01", 2, 5);
+            
             form.line2[6].Font = form.myFontUL;
-            ready = true;
+            base.Load();
         }
 
         public void SetType(int n)
@@ -26,7 +27,6 @@ namespace RS_Trainer
 
         public SelectRSTypeState(Form1 form) : base(form)
         {
-            ready = false;
             currentDigit = 1;
             Load();
         }
@@ -35,7 +35,7 @@ namespace RS_Trainer
         {
             base.Digit(n);
             base.Digit(n);
-            if (ready && n > -1 && n < 10)
+            if (n > -1 && n < 10)
             {
                 SetType(n);
             }
@@ -57,21 +57,29 @@ namespace RS_Trainer
             form.line2[6].Font = form.myFontUL;
         }
 
-        public override void Yes()
+        async public override void Yes()
         {
-            base.Yes();
-            form.currentState = new RS05MenuState(form, form.line2[5].Text + form.line2[6].Text);
-            form.line2[currentDigit + 5].Font = form.myFont;
+
+            switch (form.line2[5].Text + form.line2[6].Text)
+            {
+                case "05":
+
+                    form.SetText("Выберите", "действие:", 2, 2);
+                    await Task.Delay(1000);
+
+                    form.line2[currentDigit + 5].Font = form.myFont;
+                    form.currentState = new RS05MenuState(form);
+                    break;
+                default:
+                    break;
+            }
         }
 
         public override void No()
         {
             base.No();
-            if (ready)
-            {
-                form.currentState = new RCMenuState(form);
-                form.line2[currentDigit + 5].Font = form.myFont;
-            } 
+            form.currentState = new RCMenuState(form);
+            form.line2[currentDigit + 5].Font = form.myFont; 
         }
     }
 }

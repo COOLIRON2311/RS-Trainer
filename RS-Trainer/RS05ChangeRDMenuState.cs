@@ -8,18 +8,13 @@ namespace RS_Trainer
 {
     class RS05ChangeRDMenuState : MenuState
     {
-        async public new void Load()
+        protected override void Load()
         {
-            form.SetText("Выберите", "действие:", 2, 2);
-            await Task.Delay(1000);
-
             variants = new List<String>(2);
             variants.Add("Ключ");
             variants.Add("Адрес");
             
-            currentVariant = 0;
-            form.SetText(variants[currentVariant], variants[(currentVariant + 1) % variants.Count], 2, 2);
-            SetArrows();
+            base.Load();
         }
         public RS05ChangeRDMenuState(Form1 form) : base(form)
         {
@@ -43,9 +38,9 @@ namespace RS_Trainer
             }
         }
 
-        public override void No()
+        async public override void No()
         {
-            form.currentState = new SelectRSTypeState(form);
+            form.currentState = new RS05SaveChangesState(form);
         }
     }
 }
