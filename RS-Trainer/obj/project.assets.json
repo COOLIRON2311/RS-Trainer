@@ -8,19 +8,26 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Anoth\\.nuget\\packages\\": {}
+    "C:\\Users\\Mixael\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anoth\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
+      "projectUniqueName": "C:\\Users\\Mixael\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
       "projectName": "RS-Trainer",
-      "projectPath": "C:\\Users\\Anoth\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
-      "packagesPath": "C:\\Users\\Anoth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anoth\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\obj\\",
+      "projectPath": "C:\\Users\\Mixael\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
+      "packagesPath": "C:\\Users\\Mixael\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mixael\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Anoth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mixael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }

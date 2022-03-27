@@ -9,11 +9,10 @@ namespace RS_Trainer
 {
     class PasswordState : State
     {
-        bool ready;
         StringBuilder password;
         int numberOfDigits;
         String type;
-        async private void Load()
+        async protected override void Load()
         {
             form.SetText("Доступ", "закрыт", 3, 3);
             await Task.Delay(1000);
@@ -21,7 +20,7 @@ namespace RS_Trainer
             await Task.Delay(1000);
             form.SetText("пароль", "--------", 3, 2);
             form.line2[2].Font = form.myFontUL;
-            ready = true;
+            base.Load();
         }
 
         private void SetPassword(int n, int currentDigit)
@@ -35,7 +34,6 @@ namespace RS_Trainer
         public PasswordState(Form1 form, String type) : base(form)
         {
             this.type = type;
-            ready = false;
             password = new StringBuilder(8);
             numberOfDigits = 0;
             Load();
@@ -44,7 +42,7 @@ namespace RS_Trainer
         public override void Digit(int n)
         {
             base.Digit(n);
-            if (ready && numberOfDigits < 8 && n > -1 && n < 10)
+            if (numberOfDigits < 8 && n > -1 && n < 10)
             {
                 SetPassword(n, numberOfDigits++);
                 if(numberOfDigits < 8) form.line2[2 + numberOfDigits].Font = form.myFontUL;
@@ -84,11 +82,8 @@ namespace RS_Trainer
         public override void No()
         {
             base.No();
-            if(ready)
-            {
-                form.currentState = new RCMenuState(form);
-                form.line2[numberOfDigits + 2].Font = form.myFont;
-            }
+            form.currentState = new RCMenuState(form);
+            form.line2[numberOfDigits + 2].Font = form.myFont;
         }
     }
 }

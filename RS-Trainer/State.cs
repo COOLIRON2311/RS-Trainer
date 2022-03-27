@@ -8,15 +8,25 @@ namespace RS_Trainer
 {
     public class State
     {
+        public bool ready;
         protected Form1 form;
+        public bool loaded;
+
+        protected virtual void Load()
+        {
+            loaded = true;
+        }
 
         public State(Form1 form)
         {
             this.form = form;
+            ready = true;
+            loaded = false;
         }
+
         public virtual void LeftUp()
         {
-
+            
         }
 
         public virtual void F()

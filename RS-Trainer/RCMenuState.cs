@@ -8,7 +8,7 @@ namespace RS_Trainer
 {
     class RCMenuState : MenuState
     {
-        protected new void Load()
+        protected override void Load()
         {
             variants = new List<String>(4);
             variants.Add("Работа");
