@@ -28,14 +28,17 @@ namespace RS_Trainer
             {
                 case 0:
                     //Выдача
-                    //form.currentState = new RS05SendRDState(form);
+                    form.SetText("Выберите", "тип РД", 2, 3);
+                    await Task.Delay(1000);
+
+                    form.currentState = new RS05RDMenuState(form, "send");
                     break;
                 case 1:
                     //Изменение
-                    form.SetText("Выберите", "действие:", 2, 2);
+                    form.SetText("Выберите", "тип РД", 2, 3);
                     await Task.Delay(1000);
 
-                    form.currentState = new RS05ChangeRDMenuState(form);
+                    form.currentState = new RS05RDMenuState(form, "change");
                     break;
                 case 2:
                     form.currentState = new RS05ClearData(form);

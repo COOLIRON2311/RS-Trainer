@@ -39,7 +39,7 @@ namespace RS_Trainer
 
         public override void No()
         {
-            form.currentState = new RS05KeyMenuState(form);
+            form.currentState = new RS05KeyMenuState(form, "change");
         }
     }
 }
