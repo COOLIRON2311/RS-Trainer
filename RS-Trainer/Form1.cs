@@ -28,6 +28,7 @@ namespace RS_Trainer
         public Font myFontUL;
 
         public State currentState;
+        public Dictionary<Type, int> variants = new Dictionary<Type, int>();
 
         public void InitializeLines()
         {
@@ -79,7 +80,7 @@ namespace RS_Trainer
             }
         }
 
-        public void SetText(String line1, String line2, int offset1 = 0, int offset2 = 0)
+        async public void SetText(String line1, String line2, int offset1 = 0, int offset2 = 0)
         {
             SetTextLine1(line1, offset1);
             SetTextLine2(line2, offset2);

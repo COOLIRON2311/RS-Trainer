@@ -20,7 +20,7 @@ namespace RS_Trainer
         {
             form.SetText("изменение", "отклонено", 2, 2);
             await Task.Delay(1000);
-            form.currentState = new SelectRSTypeState(form);
+            form.currentState = new RS05MenuState(form);
         }
 
         async private void EraseData()
@@ -32,7 +32,7 @@ namespace RS_Trainer
 
             form.SetText("стирание", "завершено", 2, 2);
             await Task.Delay(1000);
-            form.currentState = new SelectRSTypeState(form);
+            form.currentState = new RS05MenuState(form);
         }
 
         public RS05ClearData(Form1 form) : base(form)

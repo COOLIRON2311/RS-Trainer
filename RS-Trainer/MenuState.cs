@@ -9,7 +9,11 @@ namespace RS_Trainer
     abstract class MenuState : State
     {
         protected List<String> variants;
-        protected int currentVariant;
+        protected int currentVariant 
+        { 
+            get { return form.variants[GetType()]; }
+            set { form.variants[GetType()] = value; }
+        }
 
         protected void SetArrows()
         {
@@ -19,7 +23,10 @@ namespace RS_Trainer
 
         protected override void Load()
         {
-            currentVariant = 0;
+            if (!form.variants.ContainsKey(GetType()))
+            {
+                form.variants.Add(GetType(), 0);
+            }
             UpdateText();
             base.Load();
         }
