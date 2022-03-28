@@ -35,6 +35,15 @@ namespace RS_Trainer
             this.antb = new System.Windows.Forms.Button();
             this.callb = new System.Windows.Forms.Button();
             this.tangentb = new System.Windows.Forms.Button();
+            this.Off = new System.Windows.Forms.RadioButton();
+            this.On = new System.Windows.Forms.RadioButton();
+            this.power = new System.Windows.Forms.Label();
+            this.mode = new System.Windows.Forms.Label();
+            this.mode_left = new System.Windows.Forms.Button();
+            this.mode_right = new System.Windows.Forms.Button();
+            this.chn_left = new System.Windows.Forms.Button();
+            this.channel = new System.Windows.Forms.Label();
+            this.chn_right = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).BeginInit();
             this.SuspendLayout();
@@ -103,11 +112,112 @@ namespace RS_Trainer
             this.tangentb.TabIndex = 5;
             this.tangentb.UseVisualStyleBackColor = false;
             // 
+            // Off
+            // 
+            this.Off.AutoSize = true;
+            this.Off.Location = new System.Drawing.Point(1023, 501);
+            this.Off.Name = "Off";
+            this.Off.Size = new System.Drawing.Size(60, 24);
+            this.Off.TabIndex = 6;
+            this.Off.TabStop = true;
+            this.Off.Text = "ПИТ";
+            this.Off.UseVisualStyleBackColor = true;
+            this.Off.CheckedChanged += new System.EventHandler(this.Off_CheckedChanged);
+            // 
+            // On
+            // 
+            this.On.AutoSize = true;
+            this.On.Location = new System.Drawing.Point(1089, 501);
+            this.On.Name = "On";
+            this.On.Size = new System.Drawing.Size(58, 24);
+            this.On.TabIndex = 7;
+            this.On.TabStop = true;
+            this.On.Text = "ВКЛ";
+            this.On.UseVisualStyleBackColor = true;
+            this.On.CheckedChanged += new System.EventHandler(this.On_CheckedChanged);
+            // 
+            // power
+            // 
+            this.power.AutoSize = true;
+            this.power.Font = new System.Drawing.Font("Segoe UI", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.power.Location = new System.Drawing.Point(843, 346);
+            this.power.Name = "power";
+            this.power.Size = new System.Drawing.Size(7, 11);
+            this.power.TabIndex = 10;
+            this.power.Text = " ";
+            // 
+            // mode
+            // 
+            this.mode.AutoSize = true;
+            this.mode.Location = new System.Drawing.Point(682, 501);
+            this.mode.Name = "mode";
+            this.mode.Size = new System.Drawing.Size(38, 20);
+            this.mode.TabIndex = 11;
+            this.mode.Text = "ТЛФ";
+            // 
+            // mode_left
+            // 
+            this.mode_left.Location = new System.Drawing.Point(642, 495);
+            this.mode_left.Name = "mode_left";
+            this.mode_left.Size = new System.Drawing.Size(34, 30);
+            this.mode_left.TabIndex = 12;
+            this.mode_left.Text = "<-";
+            this.mode_left.UseVisualStyleBackColor = true;
+            this.mode_left.Click += new System.EventHandler(this.mode_left_Click);
+            // 
+            // mode_right
+            // 
+            this.mode_right.Location = new System.Drawing.Point(726, 495);
+            this.mode_right.Name = "mode_right";
+            this.mode_right.Size = new System.Drawing.Size(34, 30);
+            this.mode_right.TabIndex = 13;
+            this.mode_right.Text = "->";
+            this.mode_right.UseVisualStyleBackColor = true;
+            this.mode_right.Click += new System.EventHandler(this.mode_right_Click);
+            // 
+            // chn_left
+            // 
+            this.chn_left.Location = new System.Drawing.Point(868, 495);
+            this.chn_left.Name = "chn_left";
+            this.chn_left.Size = new System.Drawing.Size(34, 30);
+            this.chn_left.TabIndex = 14;
+            this.chn_left.Text = "<-";
+            this.chn_left.UseVisualStyleBackColor = true;
+            this.chn_left.Click += new System.EventHandler(this.chn_left_Click);
+            // 
+            // channel
+            // 
+            this.channel.AutoSize = true;
+            this.channel.Location = new System.Drawing.Point(908, 501);
+            this.channel.Name = "channel";
+            this.channel.Size = new System.Drawing.Size(30, 20);
+            this.channel.TabIndex = 15;
+            this.channel.Text = "С 1";
+            // 
+            // chn_right
+            // 
+            this.chn_right.Location = new System.Drawing.Point(944, 495);
+            this.chn_right.Name = "chn_right";
+            this.chn_right.Size = new System.Drawing.Size(34, 30);
+            this.chn_right.TabIndex = 16;
+            this.chn_right.Text = "->";
+            this.chn_right.UseVisualStyleBackColor = true;
+            this.chn_right.Click += new System.EventHandler(this.chn_right_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.chn_right);
+            this.Controls.Add(this.channel);
+            this.Controls.Add(this.chn_left);
+            this.Controls.Add(this.mode_right);
+            this.Controls.Add(this.mode_left);
+            this.Controls.Add(this.mode);
+            this.Controls.Add(this.power);
+            this.Controls.Add(this.On);
+            this.Controls.Add(this.Off);
             this.Controls.Add(this.tangentb);
             this.Controls.Add(this.callb);
             this.Controls.Add(this.antb);
@@ -121,6 +231,7 @@ namespace RS_Trainer
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -132,5 +243,14 @@ namespace RS_Trainer
         private System.Windows.Forms.Button antb;
         private System.Windows.Forms.Button callb;
         private System.Windows.Forms.Button tangentb;
+        private System.Windows.Forms.RadioButton Off;
+        private System.Windows.Forms.RadioButton On;
+        private System.Windows.Forms.Label power;
+        private System.Windows.Forms.Label mode;
+        private System.Windows.Forms.Button mode_left;
+        private System.Windows.Forms.Button mode_right;
+        private System.Windows.Forms.Button chn_left;
+        private System.Windows.Forms.Label channel;
+        private System.Windows.Forms.Button chn_right;
     }
 }
