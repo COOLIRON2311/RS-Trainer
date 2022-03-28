@@ -33,7 +33,6 @@ namespace RS_Trainer
                 channels[i] = $"С {6 - i}";
                 channels[i+7] = $"ДС {i + 1}";
             }
-
         }
 
         private void mtg_Click(object sender, EventArgs e)
