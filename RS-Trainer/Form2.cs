@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RS_Trainer
@@ -17,12 +11,14 @@ namespace RS_Trainer
         private string[] modes;
         private int channel_sel;
         private int mode_sel;
+        private int callb_pressed;
         public static bool MTG_Attached {get; private set;}
         public static bool ANT_Attached { get; private set; }
         public Form2()
         {
             InitializeComponent();
             Powered = false;
+            callb_pressed = 0;
             MTG_Attached = false;
             ANT_Attached = false;
 
@@ -118,6 +114,15 @@ namespace RS_Trainer
         private void On_CheckedChanged(object sender, EventArgs e)
         {
             Powered = true;
+        }
+
+        private void callb_Click(object sender, EventArgs e)
+        {
+            callb_pressed = (callb_pressed + 1) % 2;
+            if (callb_pressed == 0 && mode.Text == "СРД")
+            {
+                // Delete RD
+            }
         }
     }
 }

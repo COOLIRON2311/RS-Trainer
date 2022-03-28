@@ -101,6 +101,7 @@ namespace RS_Trainer
             this.callb.Size = new System.Drawing.Size(10, 31);
             this.callb.TabIndex = 4;
             this.callb.UseVisualStyleBackColor = false;
+            this.callb.Click += new System.EventHandler(this.callb_Click);
             // 
             // tangentb
             // 
