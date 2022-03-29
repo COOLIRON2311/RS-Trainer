@@ -221,8 +221,7 @@ namespace RS_Trainer
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.power);
             this.Controls.Add(this.normativ);
