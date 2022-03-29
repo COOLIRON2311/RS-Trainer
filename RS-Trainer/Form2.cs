@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace RS_Trainer
 {
@@ -17,7 +18,25 @@ namespace RS_Trainer
         public bool ANT_Attached;
         public Form2()
         {
+            
             InitializeComponent();
+            mtgb.Parent = RSBox;
+            mtgb.Location = new Point(130, 120);
+
+            antb.Parent = RSBox;
+            antb.Location = new Point(730, 273);
+
+            callb.Parent = MTGBox;
+            callb.Location = new Point(92, 165);
+
+            tangentb.Parent = MTGBox;
+            tangentb.Location = new Point(220, 190);
+
+            power.Parent = RSBox;
+            power.Location = new Point(467, 225);
+
+
+
             Powered = false;
             callb_pressed = 0;
             setup_step = 0;
@@ -127,12 +146,14 @@ namespace RS_Trainer
         private void Off_CheckedChanged(object sender, EventArgs e)
         {
             Powered = false;
+            power.Visible = false;
             NotifyCheckedListBox(2, false);
         }
 
         private void On_CheckedChanged(object sender, EventArgs e)
         {
             Powered = true;
+            power.Visible = true;
             NotifyCheckedListBox(2);
         }
 
@@ -149,6 +170,13 @@ namespace RS_Trainer
 
         public void NotifyCheckedListBox(int idx, bool val = true)
         {
+            for (int i = 0; i < idx; i++)
+            {
+                if (!normativ.GetItemChecked(i) && i != 3)
+                {
+                    MessageBox.Show("Нарушен порядок выполнения норматива!", "Ошибка", MessageBoxButtons.OK);
+                }
+            }
             normativ.SetItemChecked(idx, val);
         }
         private void Setup()

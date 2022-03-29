@@ -37,7 +37,6 @@ namespace RS_Trainer
             this.tangentb = new System.Windows.Forms.Button();
             this.Off = new System.Windows.Forms.RadioButton();
             this.On = new System.Windows.Forms.RadioButton();
-            this.power = new System.Windows.Forms.Label();
             this.mode = new System.Windows.Forms.Label();
             this.mode_left = new System.Windows.Forms.Button();
             this.mode_right = new System.Windows.Forms.Button();
@@ -45,8 +44,10 @@ namespace RS_Trainer
             this.channel = new System.Windows.Forms.Label();
             this.chn_right = new System.Windows.Forms.Button();
             this.normativ = new System.Windows.Forms.CheckedListBox();
+            this.power = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.power)).BeginInit();
             this.SuspendLayout();
             // 
             // RSBox
@@ -75,7 +76,7 @@ namespace RS_Trainer
             this.mtgb.BackColor = System.Drawing.Color.Transparent;
             this.mtgb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.mtgb.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mtgb.Location = new System.Drawing.Point(502, 341);
+            this.mtgb.Location = new System.Drawing.Point(501, 340);
             this.mtgb.Name = "mtgb";
             this.mtgb.Size = new System.Drawing.Size(43, 43);
             this.mtgb.TabIndex = 2;
@@ -86,9 +87,9 @@ namespace RS_Trainer
             // 
             this.antb.BackColor = System.Drawing.Color.Transparent;
             this.antb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.antb.Location = new System.Drawing.Point(1106, 501);
+            this.antb.Location = new System.Drawing.Point(1101, 492);
             this.antb.Name = "antb";
-            this.antb.Size = new System.Drawing.Size(32, 29);
+            this.antb.Size = new System.Drawing.Size(46, 47);
             this.antb.TabIndex = 3;
             this.antb.UseVisualStyleBackColor = false;
             this.antb.Click += new System.EventHandler(this.ant_Click);
@@ -139,20 +140,10 @@ namespace RS_Trainer
             this.On.UseVisualStyleBackColor = true;
             this.On.CheckedChanged += new System.EventHandler(this.On_CheckedChanged);
             // 
-            // power
-            // 
-            this.power.AutoSize = true;
-            this.power.Font = new System.Drawing.Font("Segoe UI", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.power.Location = new System.Drawing.Point(843, 450);
-            this.power.Name = "power";
-            this.power.Size = new System.Drawing.Size(7, 11);
-            this.power.TabIndex = 10;
-            this.power.Text = " ";
-            // 
             // mode
             // 
             this.mode.AutoSize = true;
-            this.mode.Location = new System.Drawing.Point(682, 607);
+            this.mode.Location = new System.Drawing.Point(682, 602);
             this.mode.Name = "mode";
             this.mode.Size = new System.Drawing.Size(38, 20);
             this.mode.TabIndex = 11;
@@ -216,11 +207,24 @@ namespace RS_Trainer
             this.normativ.Size = new System.Drawing.Size(880, 202);
             this.normativ.TabIndex = 18;
             // 
+            // power
+            // 
+            this.power.BackColor = System.Drawing.Color.Transparent;
+            this.power.Image = global::RS_Trainer.Properties.Resources.light;
+            this.power.Location = new System.Drawing.Point(837, 446);
+            this.power.Name = "power";
+            this.power.Size = new System.Drawing.Size(19, 20);
+            this.power.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.power.TabIndex = 19;
+            this.power.TabStop = false;
+            this.power.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.power);
             this.Controls.Add(this.normativ);
             this.Controls.Add(this.chn_right);
             this.Controls.Add(this.channel);
@@ -228,7 +232,6 @@ namespace RS_Trainer
             this.Controls.Add(this.mode_right);
             this.Controls.Add(this.mode_left);
             this.Controls.Add(this.mode);
-            this.Controls.Add(this.power);
             this.Controls.Add(this.On);
             this.Controls.Add(this.Off);
             this.Controls.Add(this.tangentb);
@@ -243,6 +246,7 @@ namespace RS_Trainer
             this.Text = "Р-168-5УН(1)";
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.power)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,7 +262,6 @@ namespace RS_Trainer
         private System.Windows.Forms.Button tangentb;
         private System.Windows.Forms.RadioButton Off;
         private System.Windows.Forms.RadioButton On;
-        private System.Windows.Forms.Label power;
         private System.Windows.Forms.Label mode;
         private System.Windows.Forms.Button mode_left;
         private System.Windows.Forms.Button mode_right;
@@ -266,5 +269,6 @@ namespace RS_Trainer
         private System.Windows.Forms.Label channel;
         private System.Windows.Forms.Button chn_right;
         private System.Windows.Forms.CheckedListBox normativ;
+        private System.Windows.Forms.PictureBox power;
     }
 }
