@@ -44,6 +44,7 @@ namespace RS_Trainer
             this.chn_left = new System.Windows.Forms.Button();
             this.channel = new System.Windows.Forms.Label();
             this.chn_right = new System.Windows.Forms.Button();
+            this.normativ = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).BeginInit();
             this.SuspendLayout();
@@ -51,9 +52,9 @@ namespace RS_Trainer
             // RSBox
             // 
             this.RSBox.Image = global::RS_Trainer.Properties.Resources.S1;
-            this.RSBox.Location = new System.Drawing.Point(370, 12);
+            this.RSBox.Location = new System.Drawing.Point(370, 220);
             this.RSBox.Name = "RSBox";
-            this.RSBox.Size = new System.Drawing.Size(880, 649);
+            this.RSBox.Size = new System.Drawing.Size(880, 441);
             this.RSBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RSBox.TabIndex = 0;
             this.RSBox.TabStop = false;
@@ -74,7 +75,7 @@ namespace RS_Trainer
             this.mtgb.BackColor = System.Drawing.Color.Transparent;
             this.mtgb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.mtgb.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mtgb.Location = new System.Drawing.Point(502, 238);
+            this.mtgb.Location = new System.Drawing.Point(502, 341);
             this.mtgb.Name = "mtgb";
             this.mtgb.Size = new System.Drawing.Size(43, 43);
             this.mtgb.TabIndex = 2;
@@ -85,7 +86,7 @@ namespace RS_Trainer
             // 
             this.antb.BackColor = System.Drawing.Color.Transparent;
             this.antb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.antb.Location = new System.Drawing.Point(1108, 397);
+            this.antb.Location = new System.Drawing.Point(1106, 501);
             this.antb.Name = "antb";
             this.antb.Size = new System.Drawing.Size(32, 29);
             this.antb.TabIndex = 3;
@@ -112,11 +113,13 @@ namespace RS_Trainer
             this.tangentb.Size = new System.Drawing.Size(23, 197);
             this.tangentb.TabIndex = 5;
             this.tangentb.UseVisualStyleBackColor = false;
+            this.tangentb.Click += new System.EventHandler(this.tangentb_Click);
             // 
             // Off
             // 
             this.Off.AutoSize = true;
-            this.Off.Location = new System.Drawing.Point(1023, 501);
+            this.Off.Checked = true;
+            this.Off.Location = new System.Drawing.Point(1023, 597);
             this.Off.Name = "Off";
             this.Off.Size = new System.Drawing.Size(60, 24);
             this.Off.TabIndex = 6;
@@ -128,11 +131,10 @@ namespace RS_Trainer
             // On
             // 
             this.On.AutoSize = true;
-            this.On.Location = new System.Drawing.Point(1089, 501);
+            this.On.Location = new System.Drawing.Point(1089, 597);
             this.On.Name = "On";
             this.On.Size = new System.Drawing.Size(58, 24);
             this.On.TabIndex = 7;
-            this.On.TabStop = true;
             this.On.Text = "ВКЛ";
             this.On.UseVisualStyleBackColor = true;
             this.On.CheckedChanged += new System.EventHandler(this.On_CheckedChanged);
@@ -141,7 +143,7 @@ namespace RS_Trainer
             // 
             this.power.AutoSize = true;
             this.power.Font = new System.Drawing.Font("Segoe UI", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.power.Location = new System.Drawing.Point(843, 346);
+            this.power.Location = new System.Drawing.Point(843, 450);
             this.power.Name = "power";
             this.power.Size = new System.Drawing.Size(7, 11);
             this.power.TabIndex = 10;
@@ -150,7 +152,7 @@ namespace RS_Trainer
             // mode
             // 
             this.mode.AutoSize = true;
-            this.mode.Location = new System.Drawing.Point(682, 501);
+            this.mode.Location = new System.Drawing.Point(682, 607);
             this.mode.Name = "mode";
             this.mode.Size = new System.Drawing.Size(38, 20);
             this.mode.TabIndex = 11;
@@ -158,7 +160,7 @@ namespace RS_Trainer
             // 
             // mode_left
             // 
-            this.mode_left.Location = new System.Drawing.Point(642, 495);
+            this.mode_left.Location = new System.Drawing.Point(642, 597);
             this.mode_left.Name = "mode_left";
             this.mode_left.Size = new System.Drawing.Size(34, 30);
             this.mode_left.TabIndex = 12;
@@ -168,7 +170,7 @@ namespace RS_Trainer
             // 
             // mode_right
             // 
-            this.mode_right.Location = new System.Drawing.Point(726, 495);
+            this.mode_right.Location = new System.Drawing.Point(726, 597);
             this.mode_right.Name = "mode_right";
             this.mode_right.Size = new System.Drawing.Size(34, 30);
             this.mode_right.TabIndex = 13;
@@ -178,7 +180,7 @@ namespace RS_Trainer
             // 
             // chn_left
             // 
-            this.chn_left.Location = new System.Drawing.Point(868, 495);
+            this.chn_left.Location = new System.Drawing.Point(868, 597);
             this.chn_left.Name = "chn_left";
             this.chn_left.Size = new System.Drawing.Size(34, 30);
             this.chn_left.TabIndex = 14;
@@ -189,7 +191,7 @@ namespace RS_Trainer
             // channel
             // 
             this.channel.AutoSize = true;
-            this.channel.Location = new System.Drawing.Point(908, 501);
+            this.channel.Location = new System.Drawing.Point(908, 602);
             this.channel.Name = "channel";
             this.channel.Size = new System.Drawing.Size(30, 20);
             this.channel.TabIndex = 15;
@@ -197,7 +199,7 @@ namespace RS_Trainer
             // 
             // chn_right
             // 
-            this.chn_right.Location = new System.Drawing.Point(944, 495);
+            this.chn_right.Location = new System.Drawing.Point(944, 597);
             this.chn_right.Name = "chn_right";
             this.chn_right.Size = new System.Drawing.Size(34, 30);
             this.chn_right.TabIndex = 16;
@@ -205,11 +207,21 @@ namespace RS_Trainer
             this.chn_right.UseVisualStyleBackColor = true;
             this.chn_right.Click += new System.EventHandler(this.chn_right_Click);
             // 
+            // normativ
+            // 
+            this.normativ.FormattingEnabled = true;
+            this.normativ.Location = new System.Drawing.Point(370, 12);
+            this.normativ.Name = "normativ";
+            this.normativ.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.normativ.Size = new System.Drawing.Size(880, 202);
+            this.normativ.TabIndex = 18;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.normativ);
             this.Controls.Add(this.chn_right);
             this.Controls.Add(this.channel);
             this.Controls.Add(this.chn_left);
@@ -228,7 +240,7 @@ namespace RS_Trainer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Р-168-5УН(1)";
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).EndInit();
             this.ResumeLayout(false);
@@ -253,5 +265,6 @@ namespace RS_Trainer
         private System.Windows.Forms.Button chn_left;
         private System.Windows.Forms.Label channel;
         private System.Windows.Forms.Button chn_right;
+        private System.Windows.Forms.CheckedListBox normativ;
     }
 }
