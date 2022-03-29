@@ -10,3 +10,8 @@
 *.ilk
 *.lib
 *.pdb
+*.cache
+*.props
+*.json
+/RS-Trainer/Properties
+

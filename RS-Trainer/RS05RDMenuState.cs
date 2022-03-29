@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 
 namespace RS_Trainer
 {
-    class RS05ChangeRDMenuState : MenuState
+    class RS05RDMenuState : MenuState
     {
-        async public new void Load()
-        {
-            form.SetText("Выберите", "действие:", 2, 2);
-            await Task.Delay(1000);
+        String action;
 
+        protected override void Load()
+        {
             variants = new List<String>(2);
             variants.Add("Ключ");
             variants.Add("Адрес");
             
-            currentVariant = 0;
-            form.SetText(variants[currentVariant], variants[(currentVariant + 1) % variants.Count], 2, 2);
-            SetArrows();
+            base.Load();
         }
-        public RS05ChangeRDMenuState(Form1 form) : base(form)
+        public RS05RDMenuState(Form1 form, String action) : base(form)
         {
+            this.action = action;
             Load();
         }
 
@@ -32,20 +30,24 @@ namespace RS_Trainer
             {
                 case 0:
                     //Ключ
-                    form.currentState = new RS05KeyMenuState(form);
+                    form.currentState = new RS05KeyMenuState(form, action);
                     break;
                 case 1:
                     //Адрес
-                    form.currentState = new RS05AdressState(form,3,4);
+                    form.currentState = new RS05AddressInputState(form, action, 3, 4);
                     break;
                 default:
                     break;
             }
         }
 
-        public override void No()
+        async public override void No()
         {
-            form.currentState = new SelectRSTypeState(form);
+            if(action == "change")
+            {
+                form.currentState = new RS05SaveChangesState(form);
+            }
+            else form.currentState = new RS05MenuState(form);
         }
     }
 }

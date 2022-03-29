@@ -8,21 +8,21 @@ namespace RS_Trainer
 {
     class RS05GroupInputState : InputState
     {
-        int currentDigit;
         int group;
         int key;
-        async public new void Load()
+        protected override void Load()
         {
-            form.SetText("Группа "+group, form.keyGroups[key][group], 2, base.offset);
+            form.SetText("Группа " + group, form._keyGroups[key][group], 2, base.offset);
             form.line2[base.offset].Font = form.myFontUL;
+            base.Load();
         }
 
         public RS05GroupInputState(Form1 form,int cell, int offset, int keyNum,int groupNum) : base(form, cell, offset)
         {
             group = groupNum;
             key = keyNum;
-            Load();
             currentDigit = 0;
+            Load();
         }
 
         public override void Digit(int n)
@@ -33,9 +33,13 @@ namespace RS_Trainer
 
         public override void Yes()
         {
-            base.Yes();
-            form.keyGroups[key][group] = base.GetInputText();
-            form.currentState = new RS05GroupMenuState(form,key);
+            String buf = base.GetInputText();
+            if (!buf.Contains("-"))
+            {
+                base.Yes();
+                form._keyGroups[key][group] = buf;
+                form.currentState = new RS05GroupMenuState(form, key);
+            }
         }
 
         public override void No()
