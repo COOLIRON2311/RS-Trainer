@@ -27,7 +27,9 @@ namespace RS_Trainer
         private List<Button> channelButtons;
         private List<Point> chbLocations;
         private List<Size> chbSizes;
-        
+
+        private bool alerted;
+
         private void InitializeButtons()
         {
             mbLocations = new List<Point>(numberOfmButtons);
@@ -169,13 +171,12 @@ namespace RS_Trainer
 
         public Form2()
         {
-
-
             InitializeButtons();
             InitializeComponent();
 
             ChangeParents();
 
+            alerted = false;
             Powered = false;
             callb_pressed = 0;
             setup_step = 0;
@@ -327,14 +328,18 @@ namespace RS_Trainer
 
         public void NotifyCheckedListBox(int idx, bool val = true)
         {
-            for (int i = 0; i < idx; i++)
+            if(!alerted)
             {
-                if (!normativ.GetItemChecked(i) && i != 3)
+                for (int i = 0; i < idx; i++)
                 {
-                    MessageBox.Show("Нарушен порядок выполнения норматива!", "Ошибка", MessageBoxButtons.OK);
+                    if (!normativ.GetItemChecked(i) && i != 3)
+                    {
+                        alerted = true;
+                        MessageBox.Show("Нарушен порядок выполнения норматива!", "Ошибка", MessageBoxButtons.OK);
+                    }
                 }
+                normativ.SetItemChecked(idx, val);
             }
-            normativ.SetItemChecked(idx, val);
         }
         private void Setup()
         {
