@@ -33,13 +33,13 @@ namespace RS_Trainer
             mbLocations = new List<Point>(numberOfmButtons);
             mbLocations.Add(new Point(612, 575));
             mbLocations.Add(new Point(617, 558));
-            mbLocations.Add(new Point(620, 538));
-            mbLocations.Add(new Point(619, 514));
-            mbLocations.Add(new Point(631, 495));
+            mbLocations.Add(new Point(620, 536));
+            mbLocations.Add(new Point(619, 512));
+            mbLocations.Add(new Point(631, 492));
             mbLocations.Add(new Point(648, 478));
-            mbLocations.Add(new Point(683, 477));
+            mbLocations.Add(new Point(683, 476));
             mbLocations.Add(new Point(709, 478));
-            mbLocations.Add(new Point(732, 492));
+            mbLocations.Add(new Point(731, 492));
             mbLocations.Add(new Point(740, 513));
             mbLocations.Add(new Point(744, 536));
             mbLocations.Add(new Point(748, 557));
@@ -85,17 +85,17 @@ namespace RS_Trainer
             chbLocations = new List<Point>(numberOfchButtons);
             chbLocations.Add(new Point(859, 575));
             chbLocations.Add(new Point(860, 558));
-            chbLocations.Add(new Point(860, 540));
-            chbLocations.Add(new Point(863, 519));
-            chbLocations.Add(new Point(876, 498));
-            chbLocations.Add(new Point(894, 484));
-            chbLocations.Add(new Point(913, 479));
-            chbLocations.Add(new Point(937, 483));
-            chbLocations.Add(new Point(958, 494));
+            chbLocations.Add(new Point(859, 540));
+            chbLocations.Add(new Point(860, 516));
+            chbLocations.Add(new Point(873, 497));
+            chbLocations.Add(new Point(893, 483));
+            chbLocations.Add(new Point(912, 478));
+            chbLocations.Add(new Point(936, 483));
+            chbLocations.Add(new Point(957, 494));
             chbLocations.Add(new Point(973, 516));
             chbLocations.Add(new Point(979, 539));
             chbLocations.Add(new Point(980, 558));
-            chbLocations.Add(new Point(976, 576));
+            chbLocations.Add(new Point(976, 575));
 
 
             chbSizes = new List<Size>(numberOfchButtons);
@@ -126,8 +126,8 @@ namespace RS_Trainer
                 channelButtons[i].ForeColor = Color.Transparent;
                 channelButtons[i].UseVisualStyleBackColor = false;
                 
-                channelButtons[i].FlatAppearance.BorderColor = Color.Green;
                 channelButtons[i].FlatAppearance.BorderSize = 0;
+                channelButtons[i].FlatAppearance.BorderColor = Color.Green;
                 channelButtons[i].FlatAppearance.MouseDownBackColor = Color.Transparent;
                 channelButtons[i].FlatAppearance.MouseOverBackColor = Color.Transparent;
                 
