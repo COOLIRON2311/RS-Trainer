@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Je2wKDtrbzwY4VLyZ4+EnFoY9XFGqS54tgQmOHG0I8au77f0qJrsVX8OtF8B6Uo1CLDOUSxbkc0fXjyz4ueYEg==",
+  "dgSpecHash": "XZM5DJuUe+SyyvX5IwpXZ5ZhkO42QFDHEKA1vrbypSiny6NJnTlX9yY9W3CNIwYHc5YXjEb1Sm2CBNMCeMNHow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mixael\\source\\repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Anoth\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.10\\microsoft.netcore.app.runtime.win-x64.5.0.10.nupkg.sha512",
+    "C:\\Users\\Anoth\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.10\\microsoft.aspnetcore.app.runtime.win-x64.5.0.10.nupkg.sha512",
+    "C:\\Users\\Anoth\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.10\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.10.nupkg.sha512"
+  ],
   "logs": []
 }

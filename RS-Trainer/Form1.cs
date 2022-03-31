@@ -80,23 +80,10 @@ namespace RS_Trainer
             }
         }
 
-        async public void SetText(String line1, String line2, int offset1 = 0, int offset2 = 0)
+        public void SetText(String line1, String line2, int offset1 = 0, int offset2 = 0)
         {
             SetTextLine1(line1, offset1);
             SetTextLine2(line2, offset2);
-        }
-
-        public void LoadPhone()
-        {
-            SetText("Диагностика", "устройства", 1, 1);
-            Thread.Sleep(1000);
-            SetText("Устройство", "исправно", 1, 2);
-            Thread.Sleep(1000);
-            SetText("Пульт", "записи", 4, 3);
-            Thread.Sleep(1000);
-            SetText("Выберите", "режим", 2, 3);
-            Thread.Sleep(1000);
-            LoadMenu();
         }
 
         async public void LoadMenu()

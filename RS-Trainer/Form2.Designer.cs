@@ -52,6 +52,10 @@ namespace RS_Trainer
             // 
             // RSBox
             // 
+            this.RSBox.BackColor = System.Drawing.Color.Transparent;
+            this.RSBox.BackgroundImage = global::RS_Trainer.Properties.Resources.S1;
+            this.RSBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RSBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RSBox.Image = global::RS_Trainer.Properties.Resources.S1;
             this.RSBox.Location = new System.Drawing.Point(370, 220);
             this.RSBox.Name = "RSBox";
@@ -122,7 +126,7 @@ namespace RS_Trainer
             this.Off.Checked = true;
             this.Off.Location = new System.Drawing.Point(1023, 597);
             this.Off.Name = "Off";
-            this.Off.Size = new System.Drawing.Size(60, 24);
+            this.Off.Size = new System.Drawing.Size(49, 19);
             this.Off.TabIndex = 6;
             this.Off.TabStop = true;
             this.Off.Text = "ПИТ";
@@ -134,7 +138,7 @@ namespace RS_Trainer
             this.On.AutoSize = true;
             this.On.Location = new System.Drawing.Point(1089, 597);
             this.On.Name = "On";
-            this.On.Size = new System.Drawing.Size(58, 24);
+            this.On.Size = new System.Drawing.Size(47, 19);
             this.On.TabIndex = 7;
             this.On.Text = "ВКЛ";
             this.On.UseVisualStyleBackColor = true;
@@ -145,12 +149,16 @@ namespace RS_Trainer
             this.mode.AutoSize = true;
             this.mode.Location = new System.Drawing.Point(682, 602);
             this.mode.Name = "mode";
-            this.mode.Size = new System.Drawing.Size(38, 20);
+            this.mode.Size = new System.Drawing.Size(30, 15);
             this.mode.TabIndex = 11;
             this.mode.Text = "ТЛФ";
             // 
             // mode_left
             // 
+            this.mode_left.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.mode_left.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.mode_left.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mode_left.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mode_left.Location = new System.Drawing.Point(642, 597);
             this.mode_left.Name = "mode_left";
             this.mode_left.Size = new System.Drawing.Size(34, 30);
@@ -184,7 +192,7 @@ namespace RS_Trainer
             this.channel.AutoSize = true;
             this.channel.Location = new System.Drawing.Point(908, 602);
             this.channel.Name = "channel";
-            this.channel.Size = new System.Drawing.Size(30, 20);
+            this.channel.Size = new System.Drawing.Size(24, 15);
             this.channel.TabIndex = 15;
             this.channel.Text = "С 1";
             // 
@@ -204,7 +212,7 @@ namespace RS_Trainer
             this.normativ.Location = new System.Drawing.Point(370, 12);
             this.normativ.Name = "normativ";
             this.normativ.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.normativ.Size = new System.Drawing.Size(880, 202);
+            this.normativ.Size = new System.Drawing.Size(652, 202);
             this.normativ.TabIndex = 18;
             // 
             // power
@@ -222,6 +230,7 @@ namespace RS_Trainer
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.power);
             this.Controls.Add(this.normativ);
@@ -239,6 +248,7 @@ namespace RS_Trainer
             this.Controls.Add(this.mtgb);
             this.Controls.Add(this.MTGBox);
             this.Controls.Add(this.RSBox);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form2";
