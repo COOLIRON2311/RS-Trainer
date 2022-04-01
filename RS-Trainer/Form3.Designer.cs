@@ -39,9 +39,9 @@ namespace RS_Trainer
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(213, 9);
+            this.label1.Location = new System.Drawing.Point(148, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 25);
+            this.label1.Size = new System.Drawing.Size(303, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "БЛАНК РАДИОДАННЫХ";
             // 
@@ -63,7 +63,7 @@ namespace RS_Trainer
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Радиоданные";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
