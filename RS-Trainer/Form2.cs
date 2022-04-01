@@ -425,5 +425,11 @@ namespace RS_Trainer
             Form3 blank = new Form3();
             blank.Show();
         }
+
+        private void PZ_Click(object sender, EventArgs e)
+        {
+            Form1 blank = new Form1();
+            blank.Show();
+        }
     }
 }

@@ -49,6 +49,7 @@ namespace RS_Trainer
             this.startTimer = new System.Windows.Forms.Button();
             this.stopTimer = new System.Windows.Forms.Button();
             this.radioData = new System.Windows.Forms.Button();
+            this.PZ = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.power)).BeginInit();
@@ -271,11 +272,22 @@ namespace RS_Trainer
             this.radioData.UseVisualStyleBackColor = true;
             this.radioData.Click += new System.EventHandler(this.radioData_Click);
             // 
+            // PZ
+            // 
+            this.PZ.Location = new System.Drawing.Point(1044, 178);
+            this.PZ.Name = "PZ";
+            this.PZ.Size = new System.Drawing.Size(206, 34);
+            this.PZ.TabIndex = 24;
+            this.PZ.Text = "ПЗ";
+            this.PZ.UseVisualStyleBackColor = true;
+            this.PZ.Click += new System.EventHandler(this.PZ_Click);
+            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.PZ);
             this.Controls.Add(this.radioData);
             this.Controls.Add(this.stopTimer);
             this.Controls.Add(this.startTimer);
@@ -331,5 +343,6 @@ namespace RS_Trainer
         private System.Windows.Forms.Button startTimer;
         private System.Windows.Forms.Button stopTimer;
         private System.Windows.Forms.Button radioData;
+        private System.Windows.Forms.Button PZ;
     }
 }

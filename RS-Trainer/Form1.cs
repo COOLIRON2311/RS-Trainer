@@ -134,8 +134,8 @@ namespace RS_Trainer
 
             currentState = new State(this);
             LoadMenu();
-            Form2 f = new Form2();
-            f.Show();
+            /*Form2 f = new Form2();
+            f.Show();*/
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
