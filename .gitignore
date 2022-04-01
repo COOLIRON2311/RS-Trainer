@@ -4,6 +4,8 @@
 */.vs
 */*/Release
 *.vs
+*/*/obj
+*/*/bin
 
 *.dll
 *.exp

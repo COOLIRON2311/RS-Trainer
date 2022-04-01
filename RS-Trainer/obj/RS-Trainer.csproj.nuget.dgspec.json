@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj": {}
+    "D:\\git\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj": {
+    "D:\\git\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
+        "projectUniqueName": "D:\\git\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
         "projectName": "RS-Trainer",
-        "projectPath": "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
-        "packagesPath": "C:\\Users\\Anoth\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anoth\\Source\\Repos\\COOLIRON2311\\RS-Trainer\\RS-Trainer\\obj\\",
+        "projectPath": "D:\\git\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
+        "packagesPath": "C:\\Users\\ivani\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\RS-Trainer\\RS-Trainer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Anoth\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ivani\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,15 +50,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[5.0.10, 5.0.10]"
+              "version": "[5.0.13, 5.0.13]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[5.0.10, 5.0.10]"
+              "version": "[5.0.13, 5.0.13]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[5.0.10, 5.0.10]"
+              "version": "[5.0.13, 5.0.13]"
             }
           ],
           "frameworkReferences": {
@@ -71,7 +69,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

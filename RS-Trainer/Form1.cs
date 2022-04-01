@@ -122,8 +122,8 @@ namespace RS_Trainer
         }
         public Form1()
         {
-            myFont = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            myFontUL = new System.Drawing.Font("SimSun-ExtB", 17.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            myFont = new System.Drawing.Font("SimSun-ExtB", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            myFontUL = new System.Drawing.Font("SimSun-ExtB", 12, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             InitializeLines();
             InitializeComponent();
             InitializeRadioData();
