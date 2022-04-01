@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fqXfF9tUH9Zf+H1YsliZvYaZnamAiWAUDMO2sy1srZ1sfSFWIytFOaiFqXES/pZMUSUiLMZALeZt+IkUaKz1tw==",
+  "dgSpecHash": "6jlHSYsbYu2MLHLVQfNmmWeuZR7G+jeaByqutAb2N8MGp2CpMItz8ecEhNTh9k3NzoD84nhc6Zq6OL2Hz3/9Qg==",
   "success": true,
-  "projectFilePath": "D:\\Files\\Projects\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Император Сибири\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.13\\microsoft.netcore.app.runtime.win-x64.5.0.13.nupkg.sha512",
-    "C:\\Users\\Император Сибири\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.13\\microsoft.aspnetcore.app.runtime.win-x64.5.0.13.nupkg.sha512",
-    "C:\\Users\\Император Сибири\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.13\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.13.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\git\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

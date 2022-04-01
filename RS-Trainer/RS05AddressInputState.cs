@@ -29,8 +29,7 @@ namespace RS_Trainer
         async public override void Yes()
         {
             base.Yes();
-
-            switch(action)
+            switch (action)
             {
                 case "change":
                     form._rs05address = base.GetInputText();
