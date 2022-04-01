@@ -122,34 +122,11 @@ namespace RS_Trainer
             }
         }
 
-        [DllImport("gdi32.dll")]
-        static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
-        public enum DeviceCap
-        {
-            VERTRES = 10,
-            DESKTOPVERTRES = 117,
-
-            // http://pinvoke.net/default.aspx/gdi32/GetDeviceCaps.html
-        }
-
-
-        private float getScalingFactor()
-        {
-            Graphics g = Graphics.FromHwnd(IntPtr.Zero);
-            IntPtr desktop = g.GetHdc();
-            int LogicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.VERTRES);
-            int PhysicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.DESKTOPVERTRES);
-
-            float ScreenScalingFactor = (float)PhysicalScreenHeight / (float)LogicalScreenHeight;
-
-            return ScreenScalingFactor; // 1.25 = 125%
-        }
-
         public Form1()
         {
             
-            myFont = new Font("SimSun-ExtB", (getScalingFactor() == 1.0 ? 17.25f : 12), System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            myFontUL = new Font("SimSun-ExtB", (getScalingFactor() == 1.0 ? 17.25f : 12), System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            myFont = new Font("SimSun-ExtB", 16, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            myFontUL = new Font("SimSun-ExtB", 16, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             InitializeLines();
             InitializeComponent();
             InitializeRadioData();
