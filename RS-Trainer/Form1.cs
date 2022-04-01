@@ -136,9 +136,6 @@ namespace RS_Trainer
             LoadMenu();
             Form2 f = new Form2();
             f.Show();
-
-            Form3 blank = new Form3();
-            blank.Show();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
+using System.Timers;
 
 namespace RS_Trainer
 {
@@ -29,6 +30,10 @@ namespace RS_Trainer
         private List<Size> chbSizes;
 
         private bool alerted;
+
+        private System.Timers.Timer t;
+        private int minutes;
+        private int seconds;
 
         private void InitializeButtons()
         {
@@ -176,6 +181,10 @@ namespace RS_Trainer
 
             ChangeParents();
 
+            t = new System.Timers.Timer();
+            t.Interval = 1000;
+            t.Elapsed += OnTimeEvent;
+
             alerted = false;
             Powered = false;
             callb_pressed = 0;
@@ -209,6 +218,22 @@ namespace RS_Trainer
                 normativ.Items.Add(item);
             }
             NotifyCheckedListBox(0);
+        }
+
+        private void OnTimeEvent(object sender, ElapsedEventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                seconds++;
+
+                if (seconds == 60)
+                {
+                    seconds = 0;
+                    minutes++;
+                }
+                timerField.Text = string.Format("{0}:{1}", minutes.ToString().PadLeft(2, '0'),
+                    seconds.ToString().PadLeft(2, '0'));
+            }));
         }
 
         private void mtg_Click(object sender, EventArgs e)
@@ -383,5 +408,22 @@ namespace RS_Trainer
             ChangeChannelSel(channelButtons.IndexOf(sender as Button));
         }
 
+        private void startTimer_Click(object sender, EventArgs e)
+        {
+            minutes = 0;
+            seconds = 0;
+            t.Start();
+        }
+
+        private void stopTimer_Click(object sender, EventArgs e)
+        {
+            t.Stop();
+        }
+
+        private void radioData_Click(object sender, EventArgs e)
+        {
+            Form3 blank = new Form3();
+            blank.Show();
+        }
     }
 }
