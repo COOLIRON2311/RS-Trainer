@@ -319,13 +319,13 @@ namespace RS_Trainer
 
         public void CompareAdress()
         {
-            if (!radiodata.Adress.Equals(rs05address))
+            if (!radiodata.Adress.Equals(_rs05address))
                 MessageBox.Show("Адрес введен неверно", "Ошибка", MessageBoxButtons.OK);
         }
 
         public void CompareKey()
         {
-            if (!radiodata.Key.Zip(keyGroups[0]).All(x => x.First.Equals(x.Second)))
+            if (!radiodata.Key.Zip(_keyGroups[0]).All(x => x.First.Equals(x.Second)))
                 MessageBox.Show("Ключ введен неверно", "Ошибка", MessageBoxButtons.OK);
         }
 

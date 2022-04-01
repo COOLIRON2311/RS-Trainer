@@ -36,6 +36,7 @@ namespace RS_Trainer
                     form.currentState = new RS05RDMenuState(form, action);
                     break;
                 case "send":
+                    this.form.CompareAdress();
                     switch (stage)
                     {
                         case 0:
