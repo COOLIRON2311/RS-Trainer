@@ -30,6 +30,7 @@ namespace RS_Trainer
 
         public State currentState;
         public Dictionary<Type, int> variants = new Dictionary<Type, int>();
+        public RadioData radiodata;
 
         public void InitializeLines()
         {
@@ -131,6 +132,7 @@ namespace RS_Trainer
             InitializeComponent();
             InitializeRadioData();
             //LoadRadioDataFromFile("rd.txt");
+            radiodata = new RadioData("rdata.txt");
 
             currentState = new State(this);
             LoadMenu();
@@ -307,6 +309,15 @@ namespace RS_Trainer
                 currentState.No();
                 currentState.ready = true;
             }
+        }
+
+        public void CompareRD()
+        {
+            if (!radiodata.Adress.Equals(rs05address))
+                MessageBox.Show("Адрес введен неверно", "Ошибка", MessageBoxButtons.OK);
+            if (!radiodata.Key.Zip(keyGroups[0]).All(x => x.First.Equals(x.Second)))
+                MessageBox.Show("Ключ введен неверно", "Ошибка", MessageBoxButtons.OK);
+            // if (!radiodata.Freq.Zip)
         }
     }
 }
