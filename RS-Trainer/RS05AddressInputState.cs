@@ -29,7 +29,6 @@ namespace RS_Trainer
         async public override void Yes()
         {
             base.Yes();
-            form.CompareRD();
             switch (action)
             {
                 case "change":

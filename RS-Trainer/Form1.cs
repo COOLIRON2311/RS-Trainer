@@ -311,13 +311,21 @@ namespace RS_Trainer
             }
         }
 
-        public void CompareRD()
+        public void CompareAdress()
         {
             if (!radiodata.Adress.Equals(rs05address))
                 MessageBox.Show("Адрес введен неверно", "Ошибка", MessageBoxButtons.OK);
+        }
+
+        public void CompareKey()
+        {
             if (!radiodata.Key.Zip(keyGroups[0]).All(x => x.First.Equals(x.Second)))
                 MessageBox.Show("Ключ введен неверно", "Ошибка", MessageBoxButtons.OK);
-            // if (!radiodata.Freq.Zip)
+        }
+
+        public void CompareFreq()
+        {
+            // TODO
         }
     }
 }
