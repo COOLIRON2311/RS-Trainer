@@ -49,6 +49,7 @@ namespace RS_Trainer
                             break;
                         case 2:
                             stage = 3;
+                            this.form.passAddress();
                             form.SetText("РД", "переданы", 5, 3);
                             await Task.Delay(1000);
 

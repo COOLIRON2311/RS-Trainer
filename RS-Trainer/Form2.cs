@@ -35,6 +35,15 @@ namespace RS_Trainer
         private int minutes;
         private int seconds;
 
+        private List<List<String>> keyGroups;
+
+        private String rs05address;
+
+        private void PassAddress(String addr)
+        {
+            rs05address = addr;
+        }
+
         private void InitializeButtons()
         {
             mbLocations = new List<Point>(numberOfmButtons);
@@ -428,7 +437,7 @@ namespace RS_Trainer
 
         private void PZ_Click(object sender, EventArgs e)
         {
-            Form1 blank = new Form1();
+            Form1 blank = new Form1(PassAddress);
             blank.Show();
         }
     }

@@ -31,6 +31,11 @@ namespace RS_Trainer
         public State currentState;
         public Dictionary<Type, int> variants = new Dictionary<Type, int>();
 
+        private Action<String> passAddr;
+        public void passAddress()
+        {
+            passAddr(_rs05address);
+        }
         public void InitializeLines()
         {
             line1 = new List<Label>(12);
@@ -122,7 +127,7 @@ namespace RS_Trainer
             }
         }
 
-        public Form1()
+        public Form1(Action<String> passAd)
         {
             
             myFont = new Font("SimSun-ExtB", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -134,6 +139,7 @@ namespace RS_Trainer
 
             currentState = new State(this);
             LoadMenu();
+            this.passAddr = passAd;
             /*Form2 f = new Form2();
             f.Show();*/
         }
