@@ -14,12 +14,17 @@ namespace RS_Trainer
 {
     public partial class Form1 : Form
     {
-        public List<List<String>> keyGroups;
-        public List<List<String>> _keyGroups;
-
-
+        public List<List<String>> rs05keyGroups;
+        public List<List<String>> _rs05keyGroups;
         public String rs05address;
         public String _rs05address;
+
+        public List<String> rs07Groups;
+        public List<String> _rs07Groups;
+        public List<String> rs07freqs;
+        public List<String> _rs07freqs;
+        public String rs07address;
+        public String _rs07address;
 
         public String currentPassword = "00000000";
 
@@ -102,25 +107,54 @@ namespace RS_Trainer
             currentState = new RCMenuState(this);
         }
 
-        public void InitializeRadioData()
+        public void InitializeRS05RadioData()
         {
-            rs05address = "001"; //001
+            rs05address = "001";
             _rs05address = "001";
 
-            keyGroups = new List<List<String>>();
-            _keyGroups = new List<List<String>>();
+            rs05keyGroups = new List<List<String>>();
+            _rs05keyGroups = new List<List<String>>();
 
             for (int i = 0; i < 3; i++)
             {
-                keyGroups.Add(new List<String>());
-                _keyGroups.Add(new List<String>());
+                rs05keyGroups.Add(new List<String>());
+                _rs05keyGroups.Add(new List<String>());
 
                 for (int j = 0; j < 8; j++)
                 {
-                    keyGroups[i].Add("------"); //000000  ------
-                    _keyGroups[i].Add("------");
+                    rs05keyGroups[i].Add("------"); //000000  ------
+                    _rs05keyGroups[i].Add("------");
                 }
             }
+        }
+
+        public void InitializeRS07RadioData()
+        {
+            rs07address = "001";
+            _rs07address = "001";
+
+            rs07Groups = new List<String>();
+            _rs07Groups = new List<String>();
+
+            rs07freqs = new List<String>();
+            _rs07freqs = new List<String>();
+
+            for (int i = 0; i < 8; i++)
+            {
+                rs07Groups.Add("------");
+                _rs07Groups.Add("------");
+            }
+            for (int i = 0; i < 6; i++)
+            {
+                rs07freqs.Add("------");
+                _rs07freqs.Add("------");
+            }
+        }
+
+        public void InitializeRadioData()
+        {
+            InitializeRS05RadioData();
+            InitializeRS07RadioData();
         }
 
         public Form1()
@@ -319,7 +353,7 @@ namespace RS_Trainer
 
         public void CompareKey()
         {
-            if (!radiodata.Key.Zip(keyGroups[0]).All(x => x.First.Equals(x.Second)))
+            if (!radiodata.Key.Zip(rs05keyGroups[0]).All(x => x.First.Equals(x.Second)))
                 MessageBox.Show("Ключ введен неверно", "Ошибка", MessageBoxButtons.OK);
         }
 

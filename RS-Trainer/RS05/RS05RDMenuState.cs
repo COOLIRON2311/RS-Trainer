@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RS_Trainer
+namespace RS_Trainer.RS05
 {
     class RS05RDMenuState : MenuState
     {
@@ -41,7 +41,7 @@ namespace RS_Trainer
             }
         }
 
-        async public override void No()
+        public override void No()
         {
             if(action == "change")
             {

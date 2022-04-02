@@ -4,23 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RS_Trainer
+namespace RS_Trainer.RS07
 {
-    class RS05GroupInputState : InputState
+    class RS07FreqInputState : ExtendedInputState
     {
-        int group;
-        int key;
+        int freq;
         protected override void Load()
         {
-            form.SetText("Группа " + group, form._keyGroups[key][group], 2, base.offset);
+            form.SetText((freq + 1) + " частота", form._rs07freqs[freq].Substring(0, spaceOffset) + " " + form._rs07freqs[freq].Substring(spaceOffset, cellNum - spaceOffset), 2, base.offset);
             form.line2[base.offset].Font = form.myFontUL;
             base.Load();
         }
 
-        public RS05GroupInputState(Form1 form,int cell, int offset, int keyNum,int groupNum) : base(form, cell, offset)
+        public RS07FreqInputState(Form1 form, int freq) : base(form, 6, 1, 3)
         {
-            group = groupNum;
-            key = keyNum;
+            this.freq = freq;
             currentDigit = 0;
             Load();
         }
@@ -30,22 +28,22 @@ namespace RS_Trainer
             base.Digit(n);
             base.RightDown();
         }
-
         public override void Yes()
         {
             String buf = base.GetInputText();
             if (!buf.Contains("-"))
             {
                 base.Yes();
-                form._keyGroups[key][group] = buf;
-                form.currentState = new RS05GroupMenuState(form, key);
+                form._rs07freqs[freq] = buf;
+                form.currentState = new RS07FreqMenuState(form);
             }
         }
 
         public override void No()
         {
             base.No();
-            form.currentState = new RS05GroupMenuState(form,key);
+            form.currentState = new RS07FreqMenuState(form);
         }
+
     }
 }

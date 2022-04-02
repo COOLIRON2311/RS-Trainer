@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RS_Trainer
+namespace RS_Trainer.RS05
 {
     class RS05SaveChangesState : State
     {
@@ -25,11 +25,11 @@ namespace RS_Trainer
         {
             form.rs05address = form._rs05address;
 
-            for (int j = 0; j < form.keyGroups.Count; j++)
+            for (int j = 0; j < form.rs05keyGroups.Count; j++)
             {
-                for (int i = 0; i < form.keyGroups[j].Count; i++)
+                for (int i = 0; i < form.rs05keyGroups[j].Count; i++)
                 {
-                    form.keyGroups[j][i] = form._keyGroups[j][i];
+                    form.rs05keyGroups[j][i] = form._rs05keyGroups[j][i];
                 }
             }
 
@@ -46,11 +46,11 @@ namespace RS_Trainer
         {
             form._rs05address = form.rs05address;
             
-            for(int j = 0; j < form.keyGroups.Count; j++)
+            for(int j = 0; j < form.rs05keyGroups.Count; j++)
             {
-                for(int i = 0; i < form.keyGroups[j].Count; i++)
+                for(int i = 0; i < form.rs05keyGroups[j].Count; i++)
                 {
-                    form._keyGroups[j][i] = form.keyGroups[j][i];
+                    form._rs05keyGroups[j][i] = form.rs05keyGroups[j][i];
                 }
             }
 

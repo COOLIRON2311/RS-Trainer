@@ -68,7 +68,15 @@ namespace RS_Trainer
                     await Task.Delay(1000);
 
                     form.line2[currentDigit + 5].Font = form.myFont;
-                    form.currentState = new RS05MenuState(form);
+                    form.currentState = new RS05.RS05MenuState(form);
+                    break;
+                case "07":
+
+                    form.SetText("Выберите", "действие:", 2, 2);
+                    await Task.Delay(1000);
+
+                    form.line2[currentDigit + 5].Font = form.myFont;
+                    form.currentState = new RS07.RS07MenuState(form);
                     break;
                 default:
                     break;

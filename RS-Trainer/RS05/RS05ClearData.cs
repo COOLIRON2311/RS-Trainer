@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RS_Trainer
+namespace RS_Trainer.RS05
 {
     class RS05ClearData : State
     {
@@ -28,7 +28,7 @@ namespace RS_Trainer
             form.SetText("Идёт", "стирание", 4, 2);
             await Task.Delay(1000);
 
-            form.InitializeRadioData();
+            form.InitializeRS05RadioData();
 
             form.SetText("стирание", "завершено", 2, 2);
             await Task.Delay(1000);

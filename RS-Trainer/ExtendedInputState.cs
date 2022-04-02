@@ -6,32 +6,37 @@ using System.Threading.Tasks;
 
 namespace RS_Trainer
 {
-    class InputState : State
+    class ExtendedInputState : State
     {
         public int currentDigit;
         protected int cellNum;
         protected int offset;
         protected int spaceOffset;
+
+        System.Windows.Forms.Label GetCurrentLabel()
+            => form.line2[currentDigit + offset + (currentDigit >= spaceOffset ? 1 : 0)];
+        
         public String GetInputText()
         {
             StringBuilder tempString = new StringBuilder();
 
             for (int i = offset; i < cellNum + offset; i++)
-                tempString.Append(form.line2[i].Text);
+                tempString.Append(form.line2[i + (i - offset < spaceOffset ? 0 : 1)].Text);
 
             return tempString.ToString();
         }
 
-        public InputState(Form1 form, int cell, int off) : base(form)
+        public ExtendedInputState(Form1 form, int cellNum, int offset, int spaceOffset) : base(form)
         {
-            cellNum = cell;
-            offset = off;
+            this.cellNum = cellNum;
+            this.offset = offset;
             currentDigit = 0;
+            this.spaceOffset = spaceOffset;
         }
 
-        public void SetType(int n)
+        public void SetChar(int n)
         {
-            form.line2[currentDigit + offset].Text = n.ToString();
+            GetCurrentLabel().Text = n.ToString();
         }
 
         public override void Digit(int n)
@@ -39,7 +44,7 @@ namespace RS_Trainer
             base.Digit(n);
             if (n > -1 && n < 10)
             {
-                SetType(n);
+                SetChar(n);
             }
         }
 
@@ -49,26 +54,26 @@ namespace RS_Trainer
             if (currentDigit != 0) currentDigit--;
             for (int i = offset; i < cellNum + offset; i++)
                 form.line2[i].Font = form.myFont;
-            form.line2[currentDigit + offset].Font = form.myFontUL;
+            GetCurrentLabel().Font = form.myFontUL;
         }
 
         public override void RightDown()
         {
             base.RightDown();
-            if (currentDigit < cellNum-1) currentDigit++;
+            if (currentDigit < cellNum - 1) currentDigit++;
             for (int i = offset; i < cellNum + offset; i++)
                 form.line2[i].Font = form.myFont;
-            form.line2[currentDigit + offset].Font = form.myFontUL;
+            GetCurrentLabel().Font = form.myFontUL;
         }
 
         public override void Yes()
         {
-            form.line2[currentDigit + offset].Font = form.myFont;
+            GetCurrentLabel().Font = form.myFont;
         }
 
         public override void No()
         {
-            form.line2[currentDigit + offset].Font = form.myFont;
+            GetCurrentLabel().Font = form.myFont;
         }
     }
 }

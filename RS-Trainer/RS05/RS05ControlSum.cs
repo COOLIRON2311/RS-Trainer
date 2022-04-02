@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using RS_Trainer;
 
-namespace RS_Trainer
+namespace RS_Trainer.RS05
 {
     class RS05ControlSum : State
     {
         int key;
 
-        public void Load()
+        protected override void Load()
         {
             Random r = new Random();
             form.SetTextLine1("Контрольная", 1);

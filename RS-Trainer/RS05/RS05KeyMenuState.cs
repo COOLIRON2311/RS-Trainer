@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RS_Trainer
+namespace RS_Trainer.RS05
 {
     class RS05KeyMenuState : MenuState
     {
@@ -40,7 +40,7 @@ namespace RS_Trainer
                     switch (stage)
                     {
                         case 0:
-                            if(form._keyGroups[currentVariant].Any(x => x.Contains("-")))
+                            if(form._rs05keyGroups[currentVariant].Any(x => x.Contains("-")))
                             {
                                 stage = 1;                            
                                 form.SetText("Ключ " + (currentVariant + 1), "отсутствует", 2, 1);

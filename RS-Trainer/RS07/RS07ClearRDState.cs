@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RS_Trainer
+namespace RS_Trainer.RS07
 {
-    class RS05ClearRDState : State
+    class RS07ClearRDState : State
     {
-        public RS05ClearRDState(Form1 form) : base(form)
+        public RS07ClearRDState(Form1 form) : base(form)
         {
 
         }
