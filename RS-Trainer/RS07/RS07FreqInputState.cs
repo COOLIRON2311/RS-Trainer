@@ -11,7 +11,7 @@ namespace RS_Trainer.RS07
         int freq;
         protected override void Load()
         {
-            form.SetText((freq + 1) + " частота", form._rs07freqs[freq].Substring(0, spaceOffset) + " " + form._rs07freqs[freq].Substring(spaceOffset, cellNum - spaceOffset), 2, base.offset);
+            form.SetText((freq + 1) + " частота", form._rs07freqs[freq].Substring(0, spaceOffset) + " " + form._rs07freqs[freq].Substring(spaceOffset, cellNum - spaceOffset) + " кГц", 2, base.offset);
             form.line2[base.offset].Font = form.myFontUL;
             base.Load();
         }
