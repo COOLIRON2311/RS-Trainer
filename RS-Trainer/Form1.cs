@@ -345,22 +345,28 @@ namespace RS_Trainer
             }
         }
 
-        public void CompareAddress()
+        public bool CompareAddress(bool alert = true)
         {
-            if (!radiodata.Address.Equals(_rs07address))
+            bool r = radiodata.Address.Equals(_rs07address);
+            if (!r && alert)
                 MessageBox.Show("Адрес введен неверно", "Ошибка", MessageBoxButtons.OK);
+            return r;
         }
 
-        public void CompareKey()
+        public bool CompareKey(bool alert = true)
         {
-            if (!radiodata.Key.Zip(_rs07Groups).All(x => x.First.Equals(x.Second)))
+            bool r = radiodata.Key.Zip(_rs07Groups).All(x => x.First.Equals(x.Second));
+            if (!r && alert)
                 MessageBox.Show("Ключ введен неверно", "Ошибка", MessageBoxButtons.OK);
+            return r;
         }
 
-        public void CompareFreq()
+        public bool CompareFreq(bool alert = true)
         {
-            if (!radiodata.Freq.Zip(_rs07freqs).All(x => x.First.Equals(x.Second)))
+            bool r = radiodata.Freq.Zip(_rs07freqs).All(x => x.First.Equals(x.Second));
+            if (!r && alert)
                 MessageBox.Show("Частоты введены неверно", "Ошибка", MessageBoxButtons.OK);
-        }
+            return r;
+         }
     }
 }

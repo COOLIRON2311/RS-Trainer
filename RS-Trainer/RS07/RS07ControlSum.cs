@@ -12,8 +12,13 @@ namespace RS_Trainer.RS07
         protected override void Load()
         {
             Random r = new Random();
+            string c;
+            if (form.CompareKey(false))
+                c = form.radiodata.CheckSum;
+            else
+                c = ((r.Next() + 100) % 1000).ToString();
             form.SetTextLine1("Контрольная", 1);
-            form.SetTextLine2("сумма:" + ((r.Next() + 100) % 1000), 2);
+            form.SetTextLine2($"сумма: {c}", 2);
             base.Load();
         }
 
