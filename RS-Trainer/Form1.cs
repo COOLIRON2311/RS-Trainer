@@ -345,9 +345,9 @@ namespace RS_Trainer
             }
         }
 
-        public void CompareAdress()
+        public void CompareAddress()
         {
-            if (!radiodata.Adress.Equals(rs05address))
+            if (!radiodata.Address.Equals(rs05address))
                 MessageBox.Show("Адрес введен неверно", "Ошибка", MessageBoxButtons.OK);
         }
 
