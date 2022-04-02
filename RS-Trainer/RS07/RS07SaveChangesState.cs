@@ -41,6 +41,10 @@ namespace RS_Trainer.RS07
             form.SetText("сохранение", "завершено", 2, 2);
             await Task.Delay(1000);
 
+            form.CompareAddress();
+            form.CompareKey();
+            form.CompareFreq();
+
             form.currentState = new RS07MenuState(form);
         }
 

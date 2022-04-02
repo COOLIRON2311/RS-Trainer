@@ -68,6 +68,7 @@ namespace RS_Trainer.RS07
                                     else
                                     {
                                         stage = 11;
+                                        form.CompareFreq();
                                         form.SetText("Произвести", "выдачу РД?", 2, 2);
                                     }
                                     break;
@@ -83,6 +84,7 @@ namespace RS_Trainer.RS07
                                     else
                                     {
                                         stage = 11;
+                                        form.CompareKey();
                                         form.SetText("Произвести", "выдачу РД?", 2, 2);
                                     }
                                     break;

@@ -40,6 +40,8 @@ namespace RS_Trainer.RS07
                     {
                         case 0:
                             stage = 1;
+                            form._rs07address = GetInputText();
+                            form.CompareAddress();
                             form.SetText("Произвести", "выдачу РД?", 2, 2);
                             break;
                         case 1:

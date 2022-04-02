@@ -347,19 +347,20 @@ namespace RS_Trainer
 
         public void CompareAddress()
         {
-            if (!radiodata.Address.Equals(rs05address))
+            if (!radiodata.Address.Equals(_rs07address))
                 MessageBox.Show("Адрес введен неверно", "Ошибка", MessageBoxButtons.OK);
         }
 
         public void CompareKey()
         {
-            if (!radiodata.Key.Zip(rs05keyGroups[0]).All(x => x.First.Equals(x.Second)))
+            if (!radiodata.Key.Zip(_rs07Groups).All(x => x.First.Equals(x.Second)))
                 MessageBox.Show("Ключ введен неверно", "Ошибка", MessageBoxButtons.OK);
         }
 
         public void CompareFreq()
         {
-            // TODO
+            if (!radiodata.Freq.Zip(_rs07freqs).All(x => x.First.Equals(x.Second)))
+                MessageBox.Show("Частоты введены неверно", "Ошибка", MessageBoxButtons.OK);
         }
     }
 }
