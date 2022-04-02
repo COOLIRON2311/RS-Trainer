@@ -14,19 +14,20 @@ namespace RS_Trainer
 {
     public partial class Form1 : Form
     {
-        public List<List<String>> rs05keyGroups;
-        public List<List<String>> _rs05keyGroups;
-        public String rs05address;
-        public String _rs05address;
+        public List<List<string>> rs05keyGroups;
+        public List<List<string>> _rs05keyGroups;
+        public string rs05address;
+        public string _rs05address;
 
-        public List<String> rs07Groups;
-        public List<String> _rs07Groups;
-        public List<String> rs07freqs;
-        public List<String> _rs07freqs;
-        public String rs07address;
-        public String _rs07address;
+        public List<string> rs07Groups;
+        public List<string> _rs07Groups;
+        public List<string> rs07freqs;
+        public List<string> _rs07freqs;
+        public string rs07address;
+        public string _rs07address;
 
-        public String currentPassword = "00000000";
+        public string currentPassword = "00000000";
+        public bool[] data_sent;
 
         public List<Label> line1;
         public List<Label> line2;
@@ -36,6 +37,7 @@ namespace RS_Trainer
         public State currentState;
         public Dictionary<Type, int> variants = new Dictionary<Type, int>();
         public RadioData radiodata;
+        public Form2 form2;
 
         public void InitializeLines()
         {
@@ -67,7 +69,7 @@ namespace RS_Trainer
             }
         }
 
-        public void SetTextLine1(String text, int offset = 0)
+        public void SetTextLine1(string text, int offset = 0)
         {
             if (offset < 0) offset = 0;
             for(int i = 0; i < 12; ++i)
@@ -77,7 +79,7 @@ namespace RS_Trainer
             }
         }
 
-        public void SetTextLine2(String text, int offset = 0)
+        public void SetTextLine2(string text, int offset = 0)
         {
             if (offset < 0) offset = 0;
             for (int i = 0; i < 12; ++i)
@@ -87,7 +89,7 @@ namespace RS_Trainer
             }
         }
 
-        public void SetText(String line1, String line2, int offset1 = 0, int offset2 = 0)
+        public void SetText(string line1, string line2, int offset1 = 0, int offset2 = 0)
         {
             SetTextLine1(line1, offset1);
             SetTextLine2(line2, offset2);
@@ -112,13 +114,13 @@ namespace RS_Trainer
             rs05address = "001";
             _rs05address = "001";
 
-            rs05keyGroups = new List<List<String>>();
-            _rs05keyGroups = new List<List<String>>();
+            rs05keyGroups = new List<List<string>>();
+            _rs05keyGroups = new List<List<string>>();
 
             for (int i = 0; i < 3; i++)
             {
-                rs05keyGroups.Add(new List<String>());
-                _rs05keyGroups.Add(new List<String>());
+                rs05keyGroups.Add(new List<string>());
+                _rs05keyGroups.Add(new List<string>());
 
                 for (int j = 0; j < 8; j++)
                 {
@@ -132,12 +134,13 @@ namespace RS_Trainer
         {
             rs07address = "001";
             _rs07address = "001";
+            data_sent = new bool[3];
 
-            rs07Groups = new List<String>();
-            _rs07Groups = new List<String>();
+            rs07Groups = new List<string>();
+            _rs07Groups = new List<string>();
 
-            rs07freqs = new List<String>();
-            _rs07freqs = new List<String>();
+            rs07freqs = new List<string>();
+            _rs07freqs = new List<string>();
 
             for (int i = 0; i < 8; i++)
             {
@@ -146,8 +149,8 @@ namespace RS_Trainer
             }
             for (int i = 0; i < 6; i++)
             {
-                rs07freqs.Add("------");
-                _rs07freqs.Add("------");
+                rs07freqs.Add("-----0");
+                _rs07freqs.Add("-----0");
             }
         }
 
@@ -170,8 +173,8 @@ namespace RS_Trainer
 
             currentState = new State(this);
             LoadMenu();
-            Form2 f = new Form2();
-            f.Show();
+            form2 = new Form2(this);
+            form2.Show();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)

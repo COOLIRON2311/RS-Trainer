@@ -49,7 +49,8 @@ namespace RS_Trainer.RS07
                             form.SetText("Готов к", "передаче", 2, 2);
                             break;
                         case 2:
-                            stage = 3;
+                            stage = -1;
+                            form.data_sent[2] = true;
                             form.SetText("РД", "переданы", 5, 3);
                             await Task.Delay(1000);
 

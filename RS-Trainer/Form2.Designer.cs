@@ -130,7 +130,7 @@ namespace RS_Trainer
             this.Off.Checked = true;
             this.Off.Location = new System.Drawing.Point(1023, 597);
             this.Off.Name = "Off";
-            this.Off.Size = new System.Drawing.Size(72, 29);
+            this.Off.Size = new System.Drawing.Size(60, 24);
             this.Off.TabIndex = 6;
             this.Off.TabStop = true;
             this.Off.Text = "ПИТ";
@@ -142,7 +142,7 @@ namespace RS_Trainer
             this.On.AutoSize = true;
             this.On.Location = new System.Drawing.Point(1089, 597);
             this.On.Name = "On";
-            this.On.Size = new System.Drawing.Size(69, 29);
+            this.On.Size = new System.Drawing.Size(58, 24);
             this.On.TabIndex = 7;
             this.On.Text = "ВКЛ";
             this.On.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@ namespace RS_Trainer
             this.mode.AutoSize = true;
             this.mode.Location = new System.Drawing.Point(682, 602);
             this.mode.Name = "mode";
-            this.mode.Size = new System.Drawing.Size(46, 25);
+            this.mode.Size = new System.Drawing.Size(38, 20);
             this.mode.TabIndex = 11;
             this.mode.Text = "ТЛФ";
             // 
@@ -196,7 +196,7 @@ namespace RS_Trainer
             this.channel.AutoSize = true;
             this.channel.Location = new System.Drawing.Point(908, 602);
             this.channel.Name = "channel";
-            this.channel.Size = new System.Drawing.Size(38, 25);
+            this.channel.Size = new System.Drawing.Size(30, 20);
             this.channel.TabIndex = 15;
             this.channel.Text = "С 1";
             // 
@@ -216,7 +216,7 @@ namespace RS_Trainer
             this.normativ.Location = new System.Drawing.Point(370, 12);
             this.normativ.Name = "normativ";
             this.normativ.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.normativ.Size = new System.Drawing.Size(652, 200);
+            this.normativ.Size = new System.Drawing.Size(652, 202);
             this.normativ.TabIndex = 18;
             // 
             // power
@@ -236,7 +236,7 @@ namespace RS_Trainer
             this.timerField.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.timerField.Location = new System.Drawing.Point(1044, 13);
             this.timerField.Name = "timerField";
-            this.timerField.Size = new System.Drawing.Size(206, 47);
+            this.timerField.Size = new System.Drawing.Size(206, 41);
             this.timerField.TabIndex = 20;
             this.timerField.Text = "00:00";
             this.timerField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -9,6 +9,7 @@ namespace RS_Trainer
 {
     public partial class Form2 : Form
     {
+        Form1 form1;
         public bool Powered { get; private set; }
         private string[] channels;
         private string[] modes;
@@ -174,15 +175,18 @@ namespace RS_Trainer
             }
         }
 
-        public Form2()
+        public Form2(Form1 parent)
         {
             InitializeButtons();
             InitializeComponent();
 
             ChangeParents();
 
-            t = new System.Timers.Timer();
-            t.Interval = 1000;
+            form1 = parent;
+            t = new System.Timers.Timer
+            {
+                Interval = 1000
+            };
             t.Elapsed += OnTimeEvent;
 
             alerted = false;
@@ -213,7 +217,7 @@ namespace RS_Trainer
                 "  - произвести запись радиоданных с пульта ПЗ-М", 
                 "  - настроить радиостанцию",
                 "  - установить заданный режим работы и номер фиксированной частоты",
-                "Проверить управление радиостанцией при помощи микрофонно-телефонной гарнитуры" })
+                "Проверить управление радиостанцией при помощи МТГ" })
             {
                 normativ.Items.Add(item);
             }
@@ -347,7 +351,7 @@ namespace RS_Trainer
             {
                 if (mode.Text.Equals("СРД"))
                     NotifyCheckedListBox(4);
-                setup_step = 3; // TODO: read RD from Remote
+                setup_step++;
             }
         }
 
@@ -366,12 +370,18 @@ namespace RS_Trainer
                 normativ.SetItemChecked(idx, val);
             }
         }
-        private void Setup()
-        {
+        public void Setup()
+        {   
             if (setup_step == 1)
-                NotifyCheckedListBox(5);
+            {
+                if (form1.data_sent.All(x => x))
+                {
+                    NotifyCheckedListBox(5);
+                    setup_step++;
+                }
+            }
 
-            if (setup_step == 3)
+            if (setup_step == 2)
             {
                 if (mode.Text.Equals("Н"))
                 {
@@ -379,7 +389,7 @@ namespace RS_Trainer
                     setup_step++;
                 }
             }
-            if (setup_step == 4)
+            if (setup_step == 3)
             {
                 if (mode.Text.Equals("ТМ") && channel.Text.Equals("С 1"))
                 {
@@ -392,7 +402,7 @@ namespace RS_Trainer
 
         private void tangentb_Click(object sender, EventArgs e)
         {
-            if (setup_step == 5)
+            if (setup_step == 4)
             {
                 NotifyCheckedListBox(8);
             }
