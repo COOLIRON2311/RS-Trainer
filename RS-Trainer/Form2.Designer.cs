@@ -49,6 +49,7 @@ namespace RS_Trainer
             this.startTimer = new System.Windows.Forms.Button();
             this.stopTimer = new System.Windows.Forms.Button();
             this.radioData = new System.Windows.Forms.Button();
+            this.showremoteb = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.power)).BeginInit();
@@ -234,18 +235,18 @@ namespace RS_Trainer
             // timerField
             // 
             this.timerField.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.timerField.Location = new System.Drawing.Point(1044, 13);
+            this.timerField.Location = new System.Drawing.Point(1028, 93);
             this.timerField.Name = "timerField";
-            this.timerField.Size = new System.Drawing.Size(206, 41);
+            this.timerField.Size = new System.Drawing.Size(222, 41);
             this.timerField.TabIndex = 20;
             this.timerField.Text = "00:00";
             this.timerField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // startTimer
             // 
-            this.startTimer.Location = new System.Drawing.Point(1044, 71);
+            this.startTimer.Location = new System.Drawing.Point(1028, 12);
             this.startTimer.Name = "startTimer";
-            this.startTimer.Size = new System.Drawing.Size(87, 34);
+            this.startTimer.Size = new System.Drawing.Size(105, 74);
             this.startTimer.TabIndex = 21;
             this.startTimer.Text = "Старт";
             this.startTimer.UseVisualStyleBackColor = true;
@@ -253,9 +254,9 @@ namespace RS_Trainer
             // 
             // stopTimer
             // 
-            this.stopTimer.Location = new System.Drawing.Point(1163, 71);
+            this.stopTimer.Location = new System.Drawing.Point(1145, 12);
             this.stopTimer.Name = "stopTimer";
-            this.stopTimer.Size = new System.Drawing.Size(87, 34);
+            this.stopTimer.Size = new System.Drawing.Size(105, 74);
             this.stopTimer.TabIndex = 22;
             this.stopTimer.Text = "Стоп";
             this.stopTimer.UseVisualStyleBackColor = true;
@@ -263,19 +264,30 @@ namespace RS_Trainer
             // 
             // radioData
             // 
-            this.radioData.Location = new System.Drawing.Point(1044, 134);
+            this.radioData.Location = new System.Drawing.Point(1028, 140);
             this.radioData.Name = "radioData";
-            this.radioData.Size = new System.Drawing.Size(206, 34);
+            this.radioData.Size = new System.Drawing.Size(222, 34);
             this.radioData.TabIndex = 23;
             this.radioData.Text = "Радиоданные";
             this.radioData.UseVisualStyleBackColor = true;
             this.radioData.Click += new System.EventHandler(this.radioData_Click);
+            // 
+            // showremoteb
+            // 
+            this.showremoteb.Location = new System.Drawing.Point(1028, 180);
+            this.showremoteb.Name = "showremoteb";
+            this.showremoteb.Size = new System.Drawing.Size(222, 34);
+            this.showremoteb.TabIndex = 24;
+            this.showremoteb.Text = "ПЗ-М";
+            this.showremoteb.UseVisualStyleBackColor = true;
+            this.showremoteb.Click += new System.EventHandler(this.showremoteb_Click);
             // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.showremoteb);
             this.Controls.Add(this.radioData);
             this.Controls.Add(this.stopTimer);
             this.Controls.Add(this.startTimer);
@@ -301,6 +313,7 @@ namespace RS_Trainer
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Р-168-5УН(1)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.power)).EndInit();
@@ -331,5 +344,6 @@ namespace RS_Trainer
         private System.Windows.Forms.Button startTimer;
         private System.Windows.Forms.Button stopTimer;
         private System.Windows.Forms.Button radioData;
+        private System.Windows.Forms.Button showremoteb;
     }
 }

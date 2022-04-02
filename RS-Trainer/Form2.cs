@@ -10,6 +10,7 @@ namespace RS_Trainer
     public partial class Form2 : Form
     {
         Form1 form1;
+        Form3 form3;
         public bool Powered { get; private set; }
         private string[] channels;
         private string[] modes;
@@ -32,7 +33,7 @@ namespace RS_Trainer
 
         private bool alerted;
 
-        private System.Timers.Timer t;
+        private System.Timers.Timer timer;
         private int minutes;
         private int seconds;
 
@@ -183,11 +184,12 @@ namespace RS_Trainer
             ChangeParents();
 
             form1 = parent;
-            t = new System.Timers.Timer
+            form3 = new Form3();
+            timer = new System.Timers.Timer
             {
                 Interval = 1000
             };
-            t.Elapsed += OnTimeEvent;
+            timer.Elapsed += OnTimeEvent;
 
             alerted = false;
             Powered = false;
@@ -260,6 +262,8 @@ namespace RS_Trainer
             }
             if (MTG_Attached && ANT_Attached)
                 NotifyCheckedListBox(1);
+            else
+                NotifyCheckedListBox(1, false);
         }
 
         private void ant_Click(object sender, EventArgs e)
@@ -282,6 +286,8 @@ namespace RS_Trainer
             }
             if (MTG_Attached && ANT_Attached)
                 NotifyCheckedListBox(1);
+            else
+                NotifyCheckedListBox(1, false);
         }
 
         private void ChangeModeSel(int newModeSel)
@@ -357,18 +363,24 @@ namespace RS_Trainer
 
         public void NotifyCheckedListBox(int idx, bool val = true)
         {
-            if(!alerted)
+            int i;
+            int j = 0;
+            normativ.SetItemChecked(idx, val);
+            for (i = 0; i < idx; i++)
             {
-                for (int i = 0; i < idx; i++)
+                if (!normativ.GetItemChecked(i) && i != 3)
                 {
-                    if (!normativ.GetItemChecked(i) && i != 3)
+                    if (!alerted)
                     {
                         alerted = true;
                         MessageBox.Show("Нарушен порядок выполнения норматива!", "Ошибка", MessageBoxButtons.OK);
                     }
                 }
-                normativ.SetItemChecked(idx, val);
+                else
+                    j++;
             }
+            if (i == j)
+                alerted = false;
         }
         public void Setup()
         {   
@@ -422,18 +434,42 @@ namespace RS_Trainer
         {
             minutes = 0;
             seconds = 0;
-            t.Start();
+            timer.Start();
         }
 
         private void stopTimer_Click(object sender, EventArgs e)
         {
-            t.Stop();
+            timer.Stop();
         }
 
         private void radioData_Click(object sender, EventArgs e)
         {
-            Form3 blank = new Form3();
-            blank.Show();
+            if (form3.Visible)
+                form3.Hide();
+            else
+            {
+                form3.Show();
+                form3.Focus();
+            }
+        }
+
+        private void showremoteb_Click(object sender, EventArgs e)
+        {
+            if (form1.Visible)
+                form1.Hide();
+            else
+            { 
+                form1.Show();
+                form1.Focus();
+            }
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form1.force_close = true;
+            form3.force_close = true;
+            form1.Close();
+            form3.Close();
         }
     }
 }

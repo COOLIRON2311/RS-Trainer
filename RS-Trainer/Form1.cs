@@ -38,6 +38,7 @@ namespace RS_Trainer
         public Dictionary<Type, int> variants = new Dictionary<Type, int>();
         public RadioData radiodata;
         public Form2 form2;
+        public bool force_close;
 
         public void InitializeLines()
         {
@@ -107,6 +108,7 @@ namespace RS_Trainer
             SetText("Выберите", "режим", 2, 3);
             await Task.Delay(1000);
             currentState = new RCMenuState(this);
+            Hide();
         }
 
         public void InitializeRS05RadioData()
@@ -162,7 +164,7 @@ namespace RS_Trainer
 
         public Form1()
         {
-            
+            force_close = false;
             myFont = new Font("SimSun-ExtB", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             myFontUL = new Font("SimSun-ExtB", 12, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             InitializeLines();
@@ -175,16 +177,6 @@ namespace RS_Trainer
             LoadMenu();
             form2 = new Form2(this);
             form2.Show();
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -370,6 +362,15 @@ namespace RS_Trainer
             if (!r && alert)
                 MessageBox.Show("Частоты введены неверно", "Ошибка", MessageBoxButtons.OK);
             return r;
-         }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!force_close)
+            {
+                e.Cancel = true;
+                Hide();
+            }
+        }
     }
 }

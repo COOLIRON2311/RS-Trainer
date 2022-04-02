@@ -257,7 +257,7 @@ namespace RS_Trainer
             this.Name = "Form1";
             this.Text = "ПЗ-М";
             this.TransparencyKey = System.Drawing.Color.LimeGreen;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
 
         }
