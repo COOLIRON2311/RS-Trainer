@@ -16,7 +16,7 @@ namespace RS_Trainer.RS07
             if (form.CompareKey(false))
                 c = form.radiodata.CheckSum;
             else
-                c = ((r.Next() + 100) % 1000).ToString();
+                c = ((Math.Abs(r.Next()) + 100) % 1000).ToString();
             form.SetTextLine1("Контрольная", 1);
             form.SetTextLine2($"сумма: {c}", 2);
             base.Load();

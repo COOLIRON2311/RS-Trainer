@@ -50,9 +50,13 @@ namespace RS_Trainer
             this.stopTimer = new System.Windows.Forms.Button();
             this.radioData = new System.Windows.Forms.Button();
             this.showremoteb = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.mb = new System.Windows.Forms.RadioButton();
+            this.bb = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.power)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // RSBox
@@ -282,11 +286,44 @@ namespace RS_Trainer
             this.showremoteb.UseVisualStyleBackColor = true;
             this.showremoteb.Click += new System.EventHandler(this.showremoteb_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.mb);
+            this.panel1.Controls.Add(this.bb);
+            this.panel1.Location = new System.Drawing.Point(1023, 262);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(110, 31);
+            this.panel1.TabIndex = 25;
+            // 
+            // mb
+            // 
+            this.mb.AutoSize = true;
+            this.mb.Checked = true;
+            this.mb.Location = new System.Drawing.Point(64, 4);
+            this.mb.Name = "mb";
+            this.mb.Size = new System.Drawing.Size(43, 24);
+            this.mb.TabIndex = 26;
+            this.mb.TabStop = true;
+            this.mb.Text = "М";
+            this.mb.UseVisualStyleBackColor = true;
+            // 
+            // bb
+            // 
+            this.bb.AutoSize = true;
+            this.bb.Location = new System.Drawing.Point(21, 4);
+            this.bb.Name = "bb";
+            this.bb.Size = new System.Drawing.Size(39, 24);
+            this.bb.TabIndex = 0;
+            this.bb.TabStop = true;
+            this.bb.Text = "Б";
+            this.bb.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.showremoteb);
             this.Controls.Add(this.radioData);
             this.Controls.Add(this.stopTimer);
@@ -317,6 +354,8 @@ namespace RS_Trainer
             ((System.ComponentModel.ISupportInitialize)(this.RSBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTGBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.power)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +384,8 @@ namespace RS_Trainer
         private System.Windows.Forms.Button stopTimer;
         private System.Windows.Forms.Button radioData;
         private System.Windows.Forms.Button showremoteb;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton mb;
+        private System.Windows.Forms.RadioButton bb;
     }
 }
