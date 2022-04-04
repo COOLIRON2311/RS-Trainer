@@ -11,7 +11,6 @@ namespace RS_Trainer
         public int currentDigit;
         protected int cellNum;
         protected int offset;
-        protected int spaceOffset;
         public String GetInputText()
         {
             StringBuilder tempString = new StringBuilder();

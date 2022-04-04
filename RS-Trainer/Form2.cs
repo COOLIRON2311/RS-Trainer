@@ -445,10 +445,14 @@ namespace RS_Trainer
         private void radioData_Click(object sender, EventArgs e)
         {
             if (form3.Visible)
+            {
                 form3.Hide();
+                form1.Focus();
+            }
             else
             {
                 form3.Show();
+                form1.Focus();
                 form3.Focus();
             }
         }
@@ -456,10 +460,14 @@ namespace RS_Trainer
         private void showremoteb_Click(object sender, EventArgs e)
         {
             if (form1.Visible)
+            {
                 form1.Hide();
+                form3.Focus();
+            }
             else
-            { 
+            {
                 form1.Show();
+                form3.Focus();
                 form1.Focus();
             }
         }
