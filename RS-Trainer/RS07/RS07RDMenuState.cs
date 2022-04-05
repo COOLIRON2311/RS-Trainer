@@ -106,8 +106,11 @@ namespace RS_Trainer.RS07
                             break;
                         case 12:
                             stage = -1;
-                            form.data_sent[currentVariant] = true;
-                            form.form2.Setup();
+                            if (form.form2.RDInput())
+                            {
+                                form.data_sent[currentVariant] = true;
+                                form.form2.Setup();
+                            }
                             form.SetText("РД", "переданы", 5, 3);
                             await Task.Delay(1000);
                             form.SetText("Выберите", "тип РД", 2, 3);

@@ -479,5 +479,10 @@ namespace RS_Trainer
             form1.Close();
             form3.Close();
         }
+
+        public bool RDInput()
+        {
+            return mode.Text.Equals("ВД");
+        }
     }
 }
