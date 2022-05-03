@@ -186,6 +186,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.RightDown();
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -196,6 +197,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Yes();
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -206,6 +208,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(1);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -216,6 +219,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(2);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -226,6 +230,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(3);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -236,6 +241,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(4);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -246,6 +252,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(5);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -256,6 +263,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(6);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -266,6 +274,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(7);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -277,6 +286,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(8);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -287,6 +297,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(9);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -297,17 +308,8 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(0);
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -317,6 +319,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.LeftUp();
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -327,6 +330,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.F();
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
@@ -337,6 +341,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.No();
                 currentState.ready = true;
+                Console.Beep(2600, 180);
             }
         }
 
