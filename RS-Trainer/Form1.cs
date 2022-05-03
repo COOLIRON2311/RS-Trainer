@@ -177,6 +177,12 @@ namespace RS_Trainer
             form2.Show();
         }
 
+        private void beep()
+        {
+            Console.Beep(2600, 180);
+            // beeper.Play();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (currentState.ready && currentState.loaded)
@@ -184,8 +190,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.RightDown();
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -196,8 +201,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Yes();
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -208,8 +212,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(1);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -220,8 +223,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(2);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -232,8 +234,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(3);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -244,8 +245,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(4);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -256,8 +256,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(5);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -268,8 +267,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(6);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -280,8 +278,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(7);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -293,8 +290,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(8);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -305,8 +301,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(9);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -317,8 +312,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.Digit(0);
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -329,8 +323,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.LeftUp();
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -341,8 +334,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.F();
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
@@ -353,8 +345,7 @@ namespace RS_Trainer
                 currentState.ready = false;
                 currentState.No();
                 currentState.ready = true;
-                // Console.Beep(2600, 180);
-                beeper.Play();
+                beep();
             }
         }
 
