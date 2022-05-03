@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Timers;
+using System.Threading.Tasks;
+using System.Media;
 
 namespace RS_Trainer
 {
@@ -36,6 +38,9 @@ namespace RS_Trainer
         private System.Timers.Timer timer;
         private int minutes;
         private int seconds;
+
+        private SoundPlayer sstatic;
+        private SoundPlayer erased;
 
         private void InitializeButtons()
         {
@@ -224,6 +229,8 @@ namespace RS_Trainer
                 normativ.Items.Add(item);
             }
             NotifyCheckedListBox(0);
+            sstatic = new SoundPlayer(Properties.Resources.sstatic);
+            erased = new SoundPlayer(Properties.Resources.erased);
         }
 
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
@@ -323,12 +330,16 @@ namespace RS_Trainer
 
         private void mode_right_Click(object sender, EventArgs e)
         {
+            erased.Stop();
+            sstatic.PlayLooping();
             ChangeModeSel(Math.Abs((mode_sel + 1) % 13));
             Setup();
         }
 
         private void mode_left_Click(object sender, EventArgs e)
         {
+            erased.Stop();
+            sstatic.PlayLooping();
             if (mode_sel == 0)
                 ChangeModeSel(12);
             else
@@ -341,6 +352,7 @@ namespace RS_Trainer
             Powered = false;
             power.Visible = false;
             NotifyCheckedListBox(2, false);
+            sstatic.Stop();
         }
 
         private void On_CheckedChanged(object sender, EventArgs e)
@@ -348,6 +360,7 @@ namespace RS_Trainer
             Powered = true;
             power.Visible = true;
             NotifyCheckedListBox(2);
+            sstatic.PlayLooping();
         }
 
         private void callb_Click(object sender, EventArgs e)
@@ -357,6 +370,7 @@ namespace RS_Trainer
             {
                 if (mode.Text.Equals("СРД"))
                     NotifyCheckedListBox(4);
+                erased.PlayLooping();
                 setup_step++;
             }
         }
@@ -382,7 +396,7 @@ namespace RS_Trainer
             if (i == j)
                 alerted = false;
         }
-        public void Setup()
+        async public void Setup()
         {   
             if (setup_step == 1)
             {
@@ -399,6 +413,9 @@ namespace RS_Trainer
                 {
                     NotifyCheckedListBox(6);
                     setup_step++;
+                    sstatic.Stop();
+                    await Task.Delay(2000);
+                    sstatic.PlayLooping();
                 }
             }
             if (setup_step == 3)
