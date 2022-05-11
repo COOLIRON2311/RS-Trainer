@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6jlHSYsbYu2MLHLVQfNmmWeuZR7G+jeaByqutAb2N8MGp2CpMItz8ecEhNTh9k3NzoD84nhc6Zq6OL2Hz3/9Qg==",
+  "dgSpecHash": "PSVJpy0l23nCqpzkZ3cK1ti4NyfAw8yKjardXz5FRBvmRNSy8qthcqTgVPRensA+ms2nXxdYPCm0pz47Y+l33Q==",
   "success": true,
   "projectFilePath": "D:\\git\\RS-Trainer\\RS-Trainer\\RS-Trainer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ivani\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
+  ],
   "logs": []
 }

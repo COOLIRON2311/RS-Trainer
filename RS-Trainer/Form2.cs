@@ -331,7 +331,8 @@ namespace RS_Trainer
         private void mode_right_Click(object sender, EventArgs e)
         {
             erased.Stop();
-            sstatic.PlayLooping();
+            if (Powered)
+                sstatic.PlayLooping();
             ChangeModeSel(Math.Abs((mode_sel + 1) % 13));
             Setup();
         }
@@ -339,7 +340,8 @@ namespace RS_Trainer
         private void mode_left_Click(object sender, EventArgs e)
         {
             erased.Stop();
-            sstatic.PlayLooping();
+            if (Powered)  
+                sstatic.PlayLooping();
             if (mode_sel == 0)
                 ChangeModeSel(12);
             else
@@ -439,6 +441,9 @@ namespace RS_Trainer
 
         private void modeButton_Click(object sender, EventArgs e)
         {
+            erased.Stop();
+            if (Powered)
+                sstatic.Play();
             ChangeModeSel(modeButtons.IndexOf(sender as Button));
         }
 
