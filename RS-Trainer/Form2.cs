@@ -42,7 +42,7 @@ namespace RS_Trainer
         private SoundPlayer sstatic;
         private SoundPlayer erased;
 
-        private int mistakes;
+        public int mistakes;
 
         private void InitializeButtons()
         {

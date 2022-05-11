@@ -362,7 +362,10 @@ namespace RS_Trainer
         {
             bool r = radiodata.Address.Equals(_rs07address);
             if (!r && alert)
+            {
                 MessageBox.Show("Адрес введен неверно", "Ошибка", MessageBoxButtons.OK);
+                form2.mistakes++;
+            }
             return r;
         }
 
@@ -370,7 +373,10 @@ namespace RS_Trainer
         {
             bool r = radiodata.Key.Zip(_rs07Groups).All(x => x.First.Equals(x.Second));
             if (!r && alert)
+            {
                 MessageBox.Show("Ключ введен неверно", "Ошибка", MessageBoxButtons.OK);
+                form2.mistakes++;
+            }  
             return r;
         }
 
@@ -378,7 +384,10 @@ namespace RS_Trainer
         {
             bool r = radiodata.Freq.Zip(_rs07freqs).All(x => x.First.Equals(x.Second));
             if (!r && alert)
+            {
                 MessageBox.Show("Частоты введены неверно", "Ошибка", MessageBoxButtons.OK);
+                form2.mistakes++;
+            }
             return r;
         }
 
