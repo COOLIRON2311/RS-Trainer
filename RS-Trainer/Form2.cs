@@ -42,6 +42,8 @@ namespace RS_Trainer
         private SoundPlayer sstatic;
         private SoundPlayer erased;
 
+        private int mistakes;
+
         private void InitializeButtons()
         {
             mbLocations = new List<Point>(numberOfmButtons);
@@ -233,6 +235,12 @@ namespace RS_Trainer
             erased = new SoundPlayer(Properties.Resources.erased);
         }
 
+        private string getTimer()
+        {
+            return string.Format("{0}:{1}", minutes.ToString().PadLeft(2, '0'),
+                    seconds.ToString().PadLeft(2, '0'));
+        }
+
         private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
             Invoke(new Action(() =>
@@ -244,8 +252,7 @@ namespace RS_Trainer
                     seconds = 0;
                     minutes++;
                 }
-                timerField.Text = string.Format("{0}:{1}", minutes.ToString().PadLeft(2, '0'),
-                    seconds.ToString().PadLeft(2, '0'));
+                timerField.Text = getTimer();
             }));
         }
 
@@ -303,6 +310,7 @@ namespace RS_Trainer
             mode_sel = newModeSel;
             modeButtons[mode_sel].FlatAppearance.BorderSize = 2;
             mode.Text = modes[mode_sel];
+            Setup();
         }
         
         private void ChangeChannelSel(int newChannelSel)
@@ -390,6 +398,7 @@ namespace RS_Trainer
                     {
                         alerted = true;
                         MessageBox.Show("Нарушен порядок выполнения норматива!", "Ошибка", MessageBoxButtons.OK);
+                        mistakes++;
                     }
                 }
                 else
@@ -436,6 +445,7 @@ namespace RS_Trainer
             if (setup_step == 4)
             {
                 NotifyCheckedListBox(8);
+                MessageBox.Show($"Выполнение норматива завершено!\nВремя: {getTimer()}\nОшибок: {mistakes}", "Готов!", MessageBoxButtons.OK);
             }
         }
 
@@ -443,7 +453,7 @@ namespace RS_Trainer
         {
             erased.Stop();
             if (Powered)
-                sstatic.Play();
+                sstatic.PlayLooping();
             ChangeModeSel(modeButtons.IndexOf(sender as Button));
         }
 

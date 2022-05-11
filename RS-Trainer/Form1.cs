@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Media;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace RS_Trainer
@@ -35,7 +36,8 @@ namespace RS_Trainer
         public RadioData radiodata;
         public Form2 form2;
         public bool force_close;
-        public SoundPlayer beeper;
+        // public SoundPlayer beeper;
+        private Thread beeper;
 
         public void InitializeLines()
         {
@@ -169,7 +171,7 @@ namespace RS_Trainer
             InitializeRadioData();
             //LoadRadioDataFromFile("rd.txt");
             radiodata = new RadioData("rdata.txt");
-            beeper = new SoundPlayer(Properties.Resources.beep);
+            // beeper = new SoundPlayer(Properties.Resources.beep);
 
             currentState = new State(this);
             LoadMenu();
@@ -179,7 +181,14 @@ namespace RS_Trainer
 
         private void beep()
         {
-            Console.Beep(2600, 180);
+            if (beeper == null || !beeper.IsAlive)
+            {
+                beeper = new Thread(() => Console.Beep(2600, 180));
+                beeper.Start();
+            }
+            // Task.Run(() => beeper.Play());
+            // Task.Run(() => Console.Beep(2600, 180));
+            // Console.Beep(2600, 180);
             // beeper.Play();
         }
 
